@@ -19,22 +19,34 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-amber-200/80 bg-white shadow-sm">
-      {/* Top row: logo centered, mobile controls on right */}
-      <div className="mx-auto w-full max-w-6xl px-4">
-        <div className="flex items-center justify-between py-3 md:justify-center md:py-4">
-          {/* Left spice filler — desktop only */}
-          <div className="hidden flex-1 items-center justify-end md:flex" aria-hidden>
-            <div className="relative h-20 w-full max-w-xs lg:h-28 lg:max-w-md">
-              <Image
-                src="/header-spice-left.png"
-                alt=""
-                fill
-                className="object-contain object-right opacity-60"
-                sizes="(max-width: 1024px) 320px, 448px"
-              />
-            </div>
-          </div>
+      {/* Top row: logo centered with spice fillers edge-to-edge */}
+      <div className="relative w-full overflow-hidden">
+        {/* Left spice filler — full bleed, desktop only */}
+        <div className="pointer-events-none absolute inset-y-0 left-0 hidden w-[35%] md:block" aria-hidden>
+          <Image
+            src="/header-spice-left.png"
+            alt=""
+            fill
+            className="object-cover object-right"
+            sizes="35vw"
+          />
+          <div className="absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white to-transparent" />
+        </div>
 
+        {/* Right spice filler — full bleed, desktop only */}
+        <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-[35%] md:block" aria-hidden>
+          <Image
+            src="/header-spice-right.png"
+            alt=""
+            fill
+            className="object-cover object-left"
+            sizes="35vw"
+          />
+          <div className="absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white to-transparent" />
+        </div>
+
+        {/* Center content */}
+        <div className="relative z-10 mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-3 md:justify-center md:py-5">
           {/* Logo */}
           <Link href="/" className="relative block h-20 w-72 shrink-0 md:h-28 md:w-[32rem] lg:h-36 lg:w-[42rem]">
             <Image
@@ -46,19 +58,6 @@ export function SiteHeader() {
               priority
             />
           </Link>
-
-          {/* Right spice filler — desktop only */}
-          <div className="hidden flex-1 items-center justify-start md:flex" aria-hidden>
-            <div className="relative h-20 w-full max-w-xs lg:h-28 lg:max-w-md">
-              <Image
-                src="/header-spice-right.png"
-                alt=""
-                fill
-                className="object-contain object-left opacity-60"
-                sizes="(max-width: 1024px) 320px, 448px"
-              />
-            </div>
-          </div>
 
           {/* Mobile controls */}
           <div className="flex items-center gap-1 md:hidden">
@@ -90,52 +89,52 @@ export function SiteHeader() {
             </button>
           </div>
         </div>
-
-        {/* Desktop nav bar */}
-        <nav className="hidden items-center justify-center gap-1 border-t border-amber-100 py-2 md:flex">
-          <Link
-            href="/products"
-            className="rounded-lg px-4 py-2 text-sm font-semibold tracking-wide text-amber-900 transition-colors hover:bg-amber-100"
-          >
-            Products
-          </Link>
-          <span className="text-amber-200">|</span>
-          <Link
-            href="/products?category=tea"
-            className="rounded-lg px-4 py-2 text-sm font-semibold tracking-wide text-amber-900 transition-colors hover:bg-emerald-50 hover:text-emerald-800"
-          >
-            Tea
-          </Link>
-          <span className="text-amber-200">|</span>
-          <Link
-            href="/products?category=spices"
-            className="rounded-lg px-4 py-2 text-sm font-semibold tracking-wide text-amber-900 transition-colors hover:bg-orange-50 hover:text-orange-800"
-          >
-            Spices
-          </Link>
-          <span className="text-amber-200">|</span>
-          <Link
-            href="/enquiry"
-            className="relative rounded-full bg-gradient-to-r from-amber-700 to-amber-900 px-6 py-2 text-sm font-bold text-amber-50 shadow transition-transform hover:scale-105 active:scale-95"
-          >
-            Enquiry
-            {count > 0 && (
-              <span className="animate-badge-pop absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-red-500 text-[10px] font-bold text-white ring-2 ring-white">
-                {count}
-              </span>
-            )}
-          </Link>
-          <button
-            type="button"
-            onClick={() => window.dispatchEvent(new Event("asvadavat-restart-tour"))}
-            className="ml-2 flex h-8 w-8 items-center justify-center rounded-full border border-amber-200 text-sm font-bold text-amber-600 transition-colors hover:bg-amber-100"
-            aria-label="Help tour"
-            title="Show guide"
-          >
-            ?
-          </button>
-        </nav>
       </div>
+
+      {/* Desktop nav bar */}
+      <nav className="relative z-10 hidden items-center justify-center gap-1 border-t border-amber-100 bg-white py-2 md:flex">
+        <Link
+          href="/products"
+          className="rounded-lg px-4 py-2 text-sm font-semibold tracking-wide text-amber-900 transition-colors hover:bg-amber-100"
+        >
+          Products
+        </Link>
+        <span className="text-amber-200">|</span>
+        <Link
+          href="/products?category=tea"
+          className="rounded-lg px-4 py-2 text-sm font-semibold tracking-wide text-amber-900 transition-colors hover:bg-emerald-50 hover:text-emerald-800"
+        >
+          Tea
+        </Link>
+        <span className="text-amber-200">|</span>
+        <Link
+          href="/products?category=spices"
+          className="rounded-lg px-4 py-2 text-sm font-semibold tracking-wide text-amber-900 transition-colors hover:bg-orange-50 hover:text-orange-800"
+        >
+          Spices
+        </Link>
+        <span className="text-amber-200">|</span>
+        <Link
+          href="/enquiry"
+          className="relative rounded-full bg-gradient-to-r from-amber-700 to-amber-900 px-6 py-2 text-sm font-bold text-amber-50 shadow transition-transform hover:scale-105 active:scale-95"
+        >
+          Enquiry
+          {count > 0 && (
+            <span className="animate-badge-pop absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-red-500 text-[10px] font-bold text-white ring-2 ring-white">
+              {count}
+            </span>
+          )}
+        </Link>
+        <button
+          type="button"
+          onClick={() => window.dispatchEvent(new Event("asvadavat-restart-tour"))}
+          className="ml-2 flex h-8 w-8 items-center justify-center rounded-full border border-amber-200 text-sm font-bold text-amber-600 transition-colors hover:bg-amber-100"
+          aria-label="Help tour"
+          title="Show guide"
+        >
+          ?
+        </button>
+      </nav>
 
       {/* Mobile drawer */}
       {menuOpen && (
