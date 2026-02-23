@@ -38,6 +38,11 @@ export default function EnquiryPage() {
       return;
     }
 
+    clearItems();
+    setCustomerName("");
+    setPhone("");
+    setCity("");
+    setNotes("");
     setStatus("Enquiry submitted successfully!");
   }
 
