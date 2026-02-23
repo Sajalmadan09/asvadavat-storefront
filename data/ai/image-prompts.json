@@ -1,0 +1,164 @@
+[
+  {
+    "id": "tea-ctc-black-tea",
+    "slug": "black-tea-ctc",
+    "productName": "Black Tea (CTC)",
+    "prompt": "Black Tea (CTC), premium tea pouch packshot, front view, clean white studio background, photorealistic, no logo, no watermark, high detail"
+  },
+  {
+    "id": "tea-ctc-black-tea-premium",
+    "slug": "black-tea-premium-ctc",
+    "productName": "Black Tea Premium (CTC)",
+    "prompt": "Black Tea Premium (CTC), premium tea pouch packshot, front view, clean white studio background, photorealistic, no logo, no watermark, high detail"
+  },
+  {
+    "id": "tea-orthodox-green-leaves",
+    "slug": "organic-green-tea-orthodox-leaves",
+    "productName": "Organic Green Tea - Orthodox Leaves",
+    "prompt": "Organic Green Tea - Orthodox Leaves, premium tea pouch packshot, front view, clean white studio background, photorealistic, no logo, no watermark, high detail"
+  },
+  {
+    "id": "tea-orthodox-black-leaves",
+    "slug": "black-tea-orthodox-leaves",
+    "productName": "Black Tea - Orthodox Leaves",
+    "prompt": "Black Tea - Orthodox Leaves, premium tea pouch packshot, front view, clean white studio background, photorealistic, no logo, no watermark, high detail"
+  },
+  {
+    "id": "spice-dry-mango-powder",
+    "slug": "dry-mango-powder-amchur",
+    "productName": "Dry Mango Powder",
+    "prompt": "Dry Mango Powder, Indian spice pouch packshot, front view, clean white studio background, photorealistic, no logo, no watermark, high detail"
+  },
+  {
+    "id": "spice-black-pepper-powder",
+    "slug": "black-pepper-powder",
+    "productName": "Black Pepper Powder",
+    "prompt": "Black Pepper Powder, Indian spice pouch packshot, front view, clean white studio background, photorealistic, no logo, no watermark, high detail"
+  },
+  {
+    "id": "spice-black-pepper-whole",
+    "slug": "black-pepper-whole",
+    "productName": "Black Pepper Whole",
+    "prompt": "Black Pepper Whole, Indian spice pouch packshot, front view, clean white studio background, photorealistic, no logo, no watermark, high detail"
+  },
+  {
+    "id": "spice-chana-masala",
+    "slug": "chana-masala",
+    "productName": "Chana Masala",
+    "prompt": "Chana Masala, Indian spice pouch packshot, front view, clean white studio background, photorealistic, no logo, no watermark, high detail"
+  },
+  {
+    "id": "spice-coriander-powder",
+    "slug": "coriander-powder",
+    "productName": "Coriander Powder",
+    "prompt": "Coriander Powder, Indian spice pouch packshot, front view, clean white studio background, photorealistic, no logo, no watermark, high detail"
+  },
+  {
+    "id": "spice-garam-masala",
+    "slug": "mixed-spices-powder-garam-masala",
+    "productName": "Mixed Spices Powder (Garam Masala)",
+    "prompt": "Mixed Spices Powder (Garam Masala), Indian spice pouch packshot, front view, clean white studio background, photorealistic, no logo, no watermark, high detail"
+  },
+  {
+    "id": "spice-turmeric-powder",
+    "slug": "turmeric-powder",
+    "productName": "Turmeric Powder",
+    "prompt": "Turmeric Powder, Indian spice pouch packshot, front view, clean white studio background, photorealistic, no logo, no watermark, high detail"
+  },
+  {
+    "id": "spice-cumin-powder",
+    "slug": "cumin-powder",
+    "productName": "Cumin Powder",
+    "prompt": "Cumin Powder, Indian spice pouch packshot, front view, clean white studio background, photorealistic, no logo, no watermark, high detail"
+  },
+  {
+    "id": "spice-cumin-whole",
+    "slug": "cumin-whole",
+    "productName": "Cumin Whole",
+    "prompt": "Cumin Whole, Indian spice pouch packshot, front view, clean white studio background, photorealistic, no logo, no watermark, high detail"
+  },
+  {
+    "id": "spice-red-chilli-powder",
+    "slug": "red-chilli-powder",
+    "productName": "Red Chilli Powder",
+    "prompt": "Red Chilli Powder, Indian spice pouch packshot, front view, clean white studio background, photorealistic, no logo, no watermark, high detail"
+  },
+  {
+    "id": "spice-deghi-mirch-powder",
+    "slug": "deghi-mirch-powder",
+    "productName": "Deghi Mirch Powder",
+    "prompt": "Deghi Mirch Powder, Indian spice pouch packshot, front view, clean white studio background, photorealistic, no logo, no watermark, high detail"
+  },
+  {
+    "id": "spice-kutti-red-chilli",
+    "slug": "kutti-red-chilli-powder",
+    "productName": "Red Chilli Powder (Kutti)",
+    "prompt": "Red Chilli Powder (Kutti), Indian spice pouch packshot, front view, clean white studio background, photorealistic, no logo, no watermark, high detail"
+  },
+  {
+    "id": "spice-ginger-powder",
+    "slug": "ginger-powder",
+    "productName": "Ginger Powder",
+    "prompt": "Ginger Powder, Indian spice pouch packshot, front view, clean white studio background, photorealistic, no logo, no watermark, high detail"
+  },
+  {
+    "id": "spice-carom-seeds",
+    "slug": "carom-seeds-ajwain",
+    "productName": "Carom Seeds",
+    "prompt": "Carom Seeds, Indian spice pouch packshot, front view, clean white studio background, photorealistic, no logo, no watermark, high detail"
+  },
+  {
+    "id": "spice-asafoetida",
+    "slug": "asafoetida-hing",
+    "productName": "Asafoetida",
+    "prompt": "Asafoetida, Indian spice pouch packshot, front view, clean white studio background, photorealistic, no logo, no watermark, high detail"
+  },
+  {
+    "id": "spice-chai-masala",
+    "slug": "chai-masala",
+    "productName": "Chai Masala",
+    "prompt": "Chai Masala, Indian spice pouch packshot, front view, clean white studio background, photorealistic, no logo, no watermark, high detail"
+  },
+  {
+    "id": "spice-clove",
+    "slug": "clove-laung",
+    "productName": "Clove",
+    "prompt": "Clove, Indian spice pouch packshot, front view, clean white studio background, photorealistic, no logo, no watermark, high detail"
+  },
+  {
+    "id": "spice-cardamom",
+    "slug": "cardamom-elaichi",
+    "productName": "Cardamom",
+    "prompt": "Cardamom, Indian spice pouch packshot, front view, clean white studio background, photorealistic, no logo, no watermark, high detail"
+  },
+  {
+    "id": "spice-cinnamon",
+    "slug": "cinnamon-dalchini",
+    "productName": "Cinnamon",
+    "prompt": "Cinnamon, Indian spice pouch packshot, front view, clean white studio background, photorealistic, no logo, no watermark, high detail"
+  },
+  {
+    "id": "spice-kasuri-methi",
+    "slug": "fenugreek-seeds-kasuri-methi",
+    "productName": "Fenugreek Seeds (Kasuri Methi)",
+    "prompt": "Fenugreek Seeds (Kasuri Methi), Indian spice pouch packshot, front view, clean white studio background, photorealistic, no logo, no watermark, high detail"
+  },
+  {
+    "id": "spice-black-cardamom",
+    "slug": "black-cardamom-moti-elaichi",
+    "productName": "Black Cardamom",
+    "prompt": "Black Cardamom, Indian spice pouch packshot, front view, clean white studio background, photorealistic, no logo, no watermark, high detail"
+  },
+  {
+    "id": "spice-fennel",
+    "slug": "fennel-saunf",
+    "productName": "Fennel",
+    "prompt": "Fennel, Indian spice pouch packshot, front view, clean white studio background, photorealistic, no logo, no watermark, high detail"
+  },
+  {
+    "id": "spice-fenugreek-seeds",
+    "slug": "fenugreek-seeds-methi-dana",
+    "productName": "Fenugreek Seeds",
+    "prompt": "Fenugreek Seeds, Indian spice pouch packshot, front view, clean white studio background, photorealistic, no logo, no watermark, high detail"
+  }
+]

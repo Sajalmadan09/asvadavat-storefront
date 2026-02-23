@@ -1,0 +1,44 @@
+{
+  "sourceFile": "ASVADAVAT - PRODUCT LIST - NET. PRICE 05.06.2025.pdf",
+  "effectiveFrom": "2025-06-05",
+  "currency": "INR",
+  "categories": ["tea", "spices"],
+  "products": [
+    {
+      "id": "tea-ctc-black-tea",
+      "slug": "black-tea-ctc",
+      "category": "tea",
+      "nameEn": "Black Tea (CTC)",
+      "prices": [
+        { "packSize": "250g", "netPriceInr": 206 },
+        { "packSize": "500g", "netPriceInr": 402 }
+      ]
+    },
+    {
+      "id": "tea-ctc-black-tea-premium",
+      "slug": "black-tea-premium-ctc",
+      "category": "tea",
+      "nameEn": "Black Tea Premium (CTC)",
+      "prices": [
+        { "packSize": "250g", "netPriceInr": 250 },
+        { "packSize": "500g", "netPriceInr": 490 }
+      ]
+    },
+    {
+      "id": "spice-chana-masala",
+      "slug": "chana-masala",
+      "category": "spices",
+      "nameEn": "Chana Masala",
+      "nameHi": "चना मसाला",
+      "prices": [{ "packSize": "100g", "netPriceInr": 82 }]
+    },
+    {
+      "id": "spice-turmeric-powder",
+      "slug": "turmeric-powder",
+      "category": "spices",
+      "nameEn": "Turmeric Powder",
+      "nameHi": "हल्दी",
+      "prices": [{ "packSize": "100g", "netPriceInr": 42 }]
+    }
+  ]
+}
