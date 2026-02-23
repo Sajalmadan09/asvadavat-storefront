@@ -18,43 +18,79 @@ export function SiteHeader() {
   const count = isHydrated ? totalLines : 0;
 
   return (
-    <header className="sticky top-0 z-40 border-b border-amber-200/80 bg-white backdrop-blur-lg">
-      <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-2.5 md:py-3">
-        {/* Logo */}
-        <Link href="/" className="relative h-16 w-64 shrink-0 md:h-20 md:w-80 lg:h-24 lg:w-[30rem]">
-          <Image
-            src="/asvadavat-logo-header.png"
-            alt="Asvadavat"
-            fill
-            className="object-contain object-left"
-            sizes="(max-width: 768px) 256px, (max-width: 1024px) 320px, 480px"
-            priority
-          />
-        </Link>
+    <header className="sticky top-0 z-40 border-b border-amber-200/80 bg-white shadow-sm">
+      {/* Top row: logo centered, mobile controls on right */}
+      <div className="mx-auto w-full max-w-6xl px-4">
+        <div className="flex items-center justify-between py-3 md:justify-center md:py-4">
+          {/* Logo */}
+          <Link href="/" className="relative block h-14 w-56 shrink-0 md:h-20 md:w-[26rem] lg:h-24 lg:w-[34rem]">
+            <Image
+              src="/asvadavat-logo-header.png"
+              alt="Asvadavat — Spice & Tea Company"
+              fill
+              className="object-contain"
+              sizes="(max-width: 768px) 224px, (max-width: 1024px) 416px, 544px"
+              priority
+            />
+          </Link>
 
-        {/* Desktop nav */}
-        <nav className="hidden items-center gap-1 md:flex">
+          {/* Mobile controls */}
+          <div className="flex items-center gap-1 md:hidden">
+            <Link href="/enquiry" className="relative rounded-lg p-2.5 text-amber-900 active:bg-amber-100">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="h-6 w-6">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+              </svg>
+              {count > 0 && (
+                <span className="animate-badge-pop absolute right-1 top-1 flex h-4.5 w-4.5 items-center justify-center rounded-full bg-red-500 text-[9px] font-bold text-white ring-2 ring-white">
+                  {count}
+                </span>
+              )}
+            </Link>
+            <button
+              type="button"
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="rounded-lg p-2.5 text-amber-900 active:bg-amber-100"
+              aria-label="Toggle menu"
+            >
+              {menuOpen ? (
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="h-6 w-6">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
+                </svg>
+              ) : (
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="h-6 w-6">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+              )}
+            </button>
+          </div>
+        </div>
+
+        {/* Desktop nav bar */}
+        <nav className="hidden items-center justify-center gap-1 border-t border-amber-100 py-2 md:flex">
           <Link
             href="/products"
-            className="rounded-lg px-3 py-2 text-sm font-medium text-amber-900 transition-colors hover:bg-amber-100"
+            className="rounded-lg px-4 py-2 text-sm font-semibold tracking-wide text-amber-900 transition-colors hover:bg-amber-100"
           >
             Products
           </Link>
+          <span className="text-amber-200">|</span>
           <Link
             href="/products?category=tea"
-            className="rounded-lg px-3 py-2 text-sm font-medium text-amber-900 transition-colors hover:bg-emerald-50 hover:text-emerald-800"
+            className="rounded-lg px-4 py-2 text-sm font-semibold tracking-wide text-amber-900 transition-colors hover:bg-emerald-50 hover:text-emerald-800"
           >
             Tea
           </Link>
+          <span className="text-amber-200">|</span>
           <Link
             href="/products?category=spices"
-            className="rounded-lg px-3 py-2 text-sm font-medium text-amber-900 transition-colors hover:bg-orange-50 hover:text-orange-800"
+            className="rounded-lg px-4 py-2 text-sm font-semibold tracking-wide text-amber-900 transition-colors hover:bg-orange-50 hover:text-orange-800"
           >
             Spices
           </Link>
+          <span className="text-amber-200">|</span>
           <Link
             href="/enquiry"
-            className="relative ml-2 rounded-full bg-gradient-to-r from-amber-700 to-amber-900 px-5 py-2 text-sm font-bold text-amber-50 shadow transition-transform hover:scale-105 active:scale-95"
+            className="relative rounded-full bg-gradient-to-r from-amber-700 to-amber-900 px-6 py-2 text-sm font-bold text-amber-50 shadow transition-transform hover:scale-105 active:scale-95"
           >
             Enquiry
             {count > 0 && (
@@ -73,36 +109,6 @@ export function SiteHeader() {
             ?
           </button>
         </nav>
-
-        {/* Mobile controls */}
-        <div className="flex items-center gap-1 md:hidden">
-          <Link href="/enquiry" className="relative rounded-lg p-2.5 text-amber-900 active:bg-amber-100">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="h-6 w-6">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
-            </svg>
-            {count > 0 && (
-              <span className="animate-badge-pop absolute right-1 top-1 flex h-4.5 w-4.5 items-center justify-center rounded-full bg-red-500 text-[9px] font-bold text-white ring-2 ring-white">
-                {count}
-              </span>
-            )}
-          </Link>
-          <button
-            type="button"
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="rounded-lg p-2.5 text-amber-900 active:bg-amber-100"
-            aria-label="Toggle menu"
-          >
-            {menuOpen ? (
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="h-6 w-6">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
-              </svg>
-            ) : (
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="h-6 w-6">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-              </svg>
-            )}
-          </button>
-        </div>
       </div>
 
       {/* Mobile drawer */}
