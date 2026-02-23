@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { AddToEnquiryButton } from "@/components/add-to-enquiry-button";
 import { categoryLabels } from "@/data/catalog-seed";
+import { getProductImageBySlug } from "@/data/product-images";
 import { filterProducts, getAllPackSizes } from "@/lib/catalog";
 import type { CategoryKey, PackSizeLabel } from "@/types/catalog";
 
@@ -86,8 +88,25 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
       </form>
 
       <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-        {products.map((product) => (
+        {products.map((product) => {
+          const productImage = getProductImageBySlug(product.slug);
+          return (
           <article key={product.id} className="rounded-xl border border-amber-200 bg-white p-4">
+            <div className="relative mb-3 h-40 overflow-hidden rounded-lg border border-amber-100 bg-amber-50">
+              {productImage ? (
+                <Image
+                  src={productImage}
+                  alt={product.nameEn}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 33vw"
+                />
+              ) : (
+                <div className="flex h-full items-center justify-center text-xs font-semibold tracking-wide text-amber-700">
+                  AI image in progress
+                </div>
+              )}
+            </div>
             <p className="text-xs font-semibold uppercase tracking-wide text-amber-700">
               {categoryLabels[product.category]}
             </p>
@@ -116,7 +135,8 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
               </Link>
             </div>
           </article>
-        ))}
+          );
+        })}
       </div>
     </main>
   );

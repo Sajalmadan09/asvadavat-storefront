@@ -10,13 +10,13 @@ export function SiteHeader() {
   return (
     <header className="border-b border-amber-200 bg-white/95">
       <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-4">
-        <Link href="/" className="relative h-10 w-48 md:h-12 md:w-60">
+        <Link href="/" className="relative h-12 w-56 md:h-14 md:w-80">
           <Image
-            src="/asvadavat-logo-clean.png"
+            src="/asvadavat-logo-header.png"
             alt="Asvadavat Spice and Tea Company"
             fill
             className="object-contain object-left"
-            sizes="(max-width: 768px) 192px, 240px"
+            sizes="(max-width: 768px) 224px, 320px"
             priority
           />
         </Link>

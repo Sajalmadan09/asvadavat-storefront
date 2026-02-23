@@ -1,5 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
 import { products } from "@/data/catalog-seed";
+import { getProductImageBySlug } from "@/data/product-images";
 
 export default function Home() {
   const featured = products.slice(0, 6);
@@ -33,8 +35,25 @@ export default function Home() {
           </Link>
         </div>
         <div className="mt-5 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {featured.map((product) => (
+          {featured.map((product) => {
+            const productImage = getProductImageBySlug(product.slug);
+            return (
             <article key={product.id} className="rounded-xl border border-amber-200 bg-white p-4">
+              <div className="relative mb-3 h-36 overflow-hidden rounded-lg border border-amber-100 bg-amber-50">
+                {productImage ? (
+                  <Image
+                    src={productImage}
+                    alt={product.nameEn}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 33vw"
+                  />
+                ) : (
+                  <div className="flex h-full items-center justify-center text-xs font-semibold tracking-wide text-amber-700">
+                    Image coming soon
+                  </div>
+                )}
+              </div>
               <h3 className="text-lg font-semibold text-amber-950">{product.nameEn}</h3>
               {product.nameHi ? <p className="text-sm text-amber-700">{product.nameHi}</p> : null}
               <p className="mt-2 text-sm text-amber-800">{product.description}</p>
@@ -48,7 +67,8 @@ export default function Home() {
                 View details
               </Link>
             </article>
-          ))}
+            );
+          })}
         </div>
       </section>
     </main>
