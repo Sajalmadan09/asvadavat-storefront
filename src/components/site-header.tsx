@@ -21,8 +21,8 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 border-b border-amber-200/80 bg-white shadow-sm">
       {/* Top row: logo centered with spice fillers edge-to-edge */}
       <div className="relative w-full overflow-hidden">
-        {/* Left spice filler — full bleed, desktop only */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 hidden w-[35%] md:block" aria-hidden>
+        {/* Left spice filler — full bleed */}
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-[30%] md:w-[35%]" aria-hidden>
           <Image
             src="/header-spice-left.png"
             alt=""
@@ -30,11 +30,11 @@ export function SiteHeader() {
             className="object-cover object-right"
             sizes="35vw"
           />
-          <div className="absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white to-transparent" />
+          <div className="absolute inset-y-0 right-0 w-1/2 bg-gradient-to-l from-white to-transparent md:w-1/3" />
         </div>
 
-        {/* Right spice filler — full bleed, desktop only */}
-        <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-[35%] md:block" aria-hidden>
+        {/* Right spice filler — full bleed */}
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-[30%] md:w-[35%]" aria-hidden>
           <Image
             src="/header-spice-right.png"
             alt=""
@@ -42,7 +42,7 @@ export function SiteHeader() {
             className="object-cover object-left"
             sizes="35vw"
           />
-          <div className="absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white to-transparent" />
+          <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-white to-transparent md:w-1/3" />
         </div>
 
         {/* Center content */}
