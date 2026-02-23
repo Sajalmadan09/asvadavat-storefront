@@ -59,24 +59,28 @@ export default function Home() {
           </div>
 
           {/* Scroll hint */}
-          <div className="mt-12 flex justify-center md:mt-16">
+          <a
+            href="#categories"
+            className="mt-12 flex justify-center md:mt-16"
+            aria-label="Scroll down"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="h-6 w-6 animate-bounce text-amber-300/60"
+              className="h-6 w-6 animate-bounce text-amber-300/60 transition-colors hover:text-amber-100"
             >
               <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
             </svg>
-          </div>
+          </a>
         </div>
       </section>
 
       <div className="mx-auto w-full max-w-6xl px-4">
         {/* ───── Category Quick Links ───── */}
-        <section className="-mt-10 grid grid-cols-2 gap-3 md:gap-5">
+        <section id="categories" className="-mt-10 scroll-mt-20 grid grid-cols-2 gap-3 md:gap-5">
           <Link
             href="/products?category=tea"
             className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 p-5 text-white shadow-lg transition-transform active:scale-[0.97] md:p-8 md:hover:scale-[1.02]"
