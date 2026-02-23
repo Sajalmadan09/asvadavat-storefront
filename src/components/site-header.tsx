@@ -22,6 +22,21 @@ export function SiteHeader() {
       {/* Top row: logo centered, mobile controls on right */}
       <div className="mx-auto w-full max-w-6xl px-4">
         <div className="flex items-center justify-between py-3 md:justify-center md:py-4">
+          {/* Left flourish — desktop only */}
+          <div className="hidden flex-1 items-center justify-end pr-5 md:flex" aria-hidden>
+            <svg viewBox="0 0 200 40" className="h-8 w-40 text-amber-300/70 lg:h-10 lg:w-52" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <path d="M200 20 C180 20, 170 8, 150 8 C130 8, 128 20, 110 20 C92 20, 88 8, 70 12 C55 15, 52 25, 40 20 C28 15, 20 20, 0 20" strokeLinecap="round" />
+              <circle cx="150" cy="8" r="3" fill="currentColor" className="text-amber-400/50" stroke="none" />
+              <circle cx="110" cy="20" r="2.5" fill="currentColor" className="text-orange-400/50" stroke="none" />
+              <circle cx="70" cy="12" r="3" fill="currentColor" className="text-emerald-500/50" stroke="none" />
+              <circle cx="40" cy="20" r="2" fill="currentColor" className="text-red-400/50" stroke="none" />
+              <path d="M155 6 C158 2, 162 0, 166 2" strokeWidth="1.2" className="text-amber-400/40" />
+              <path d="M145 6 C142 1, 137 0, 134 3" strokeWidth="1.2" className="text-amber-400/40" />
+              <path d="M73 9 C76 4, 80 3, 83 6" strokeWidth="1.2" className="text-emerald-500/40" />
+              <path d="M67 9 C64 4, 60 3, 57 6" strokeWidth="1.2" className="text-emerald-500/40" />
+            </svg>
+          </div>
+
           {/* Logo */}
           <Link href="/" className="relative block h-20 w-72 shrink-0 md:h-28 md:w-[32rem] lg:h-36 lg:w-[42rem]">
             <Image
@@ -33,6 +48,21 @@ export function SiteHeader() {
               priority
             />
           </Link>
+
+          {/* Right flourish — desktop only */}
+          <div className="hidden flex-1 items-center justify-start pl-5 md:flex" aria-hidden>
+            <svg viewBox="0 0 200 40" className="h-8 w-40 text-amber-300/70 lg:h-10 lg:w-52" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <path d="M0 20 C20 20, 30 8, 50 8 C70 8, 72 20, 90 20 C108 20, 112 8, 130 12 C145 15, 148 25, 160 20 C172 15, 180 20, 200 20" strokeLinecap="round" />
+              <circle cx="50" cy="8" r="3" fill="currentColor" className="text-amber-400/50" stroke="none" />
+              <circle cx="90" cy="20" r="2.5" fill="currentColor" className="text-orange-400/50" stroke="none" />
+              <circle cx="130" cy="12" r="3" fill="currentColor" className="text-emerald-500/50" stroke="none" />
+              <circle cx="160" cy="20" r="2" fill="currentColor" className="text-red-400/50" stroke="none" />
+              <path d="M45 6 C42 2, 38 0, 34 2" strokeWidth="1.2" className="text-amber-400/40" />
+              <path d="M55 6 C58 1, 63 0, 66 3" strokeWidth="1.2" className="text-amber-400/40" />
+              <path d="M127 9 C124 4, 120 3, 117 6" strokeWidth="1.2" className="text-emerald-500/40" />
+              <path d="M133 9 C136 4, 140 3, 143 6" strokeWidth="1.2" className="text-emerald-500/40" />
+            </svg>
+          </div>
 
           {/* Mobile controls */}
           <div className="flex items-center gap-1 md:hidden">
