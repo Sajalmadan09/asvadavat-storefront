@@ -13,7 +13,7 @@ export default function EnquiryPage() {
   const [phone, setPhone] = useState("");
   const [city, setCity] = useState("");
   const [notes, setNotes] = useState("");
-  const [status, setStatus] = useState<string>("");
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
   const totalEstimate = useMemo(
     () => items.reduce((sum, item) => sum + item.netPriceInr * item.qty, 0),
@@ -22,28 +22,31 @@ export default function EnquiryPage() {
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setStatus("Submitting...");
+    setStatus("submitting");
 
-    const payload = { customerName, phone, city, notes, items };
+    try {
+      const payload = { customerName: customerName.trim(), phone: phone.trim(), city: city.trim(), notes, items };
 
-    const response = await fetch("/api/enquiries", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
-    });
+      const response = await fetch("/api/enquiries", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
 
-    if (!response.ok) {
-      const message = await response.text();
-      setStatus(`Failed: ${message}`);
-      return;
+      if (!response.ok) {
+        setStatus("error");
+        return;
+      }
+
+      clearItems();
+      setCustomerName("");
+      setPhone("");
+      setCity("");
+      setNotes("");
+      setStatus("success");
+    } catch {
+      setStatus("error");
     }
-
-    clearItems();
-    setCustomerName("");
-    setPhone("");
-    setCity("");
-    setNotes("");
-    setStatus("Enquiry submitted successfully!");
   }
 
   const whatsappUrl = (() => {
@@ -134,39 +137,55 @@ export default function EnquiryPage() {
             <h2 className="text-base font-bold text-amber-950">Your Details</h2>
           </div>
           <form onSubmit={onSubmit} className="space-y-3 px-5 py-4">
-            <input
-              required
-              value={customerName}
-              onChange={(event) => setCustomerName(event.target.value)}
-              placeholder="Full name"
-              className="w-full rounded-xl border border-amber-200 px-4 py-3 text-sm focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-200"
-            />
-            <input
-              required
-              value={phone}
-              onChange={(event) => setPhone(event.target.value)}
-              placeholder="Phone number"
-              className="w-full rounded-xl border border-amber-200 px-4 py-3 text-sm focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-200"
-            />
-            <input
-              required
-              value={city}
-              onChange={(event) => setCity(event.target.value)}
-              placeholder="City"
-              className="w-full rounded-xl border border-amber-200 px-4 py-3 text-sm focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-200"
-            />
+            <div>
+              <input
+                required
+                minLength={2}
+                maxLength={80}
+                value={customerName}
+                onChange={(event) => setCustomerName(event.target.value)}
+                placeholder="Full name"
+                className="w-full rounded-xl border border-amber-200 px-4 py-3 text-sm focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-200"
+              />
+            </div>
+            <div>
+              <input
+                required
+                type="tel"
+                minLength={8}
+                maxLength={15}
+                pattern="[0-9+\-\s]{8,15}"
+                title="Please enter a valid phone number (8-15 digits)"
+                value={phone}
+                onChange={(event) => setPhone(event.target.value)}
+                placeholder="Phone number (e.g. +91 98765 43210)"
+                className="w-full rounded-xl border border-amber-200 px-4 py-3 text-sm focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-200"
+              />
+            </div>
+            <div>
+              <input
+                required
+                minLength={2}
+                maxLength={80}
+                value={city}
+                onChange={(event) => setCity(event.target.value)}
+                placeholder="City"
+                className="w-full rounded-xl border border-amber-200 px-4 py-3 text-sm focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-200"
+              />
+            </div>
             <textarea
               value={notes}
               onChange={(event) => setNotes(event.target.value)}
+              maxLength={500}
               placeholder="Additional notes (optional)"
               className="min-h-24 w-full rounded-xl border border-amber-200 px-4 py-3 text-sm focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-200"
             />
             <button
               type="submit"
-              disabled={items.length === 0}
+              disabled={items.length === 0 || status === "submitting"}
               className="w-full rounded-xl bg-gradient-to-r from-amber-700 to-amber-900 py-3.5 text-sm font-bold text-amber-50 shadow-lg transition-all active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50"
             >
-              Submit Enquiry
+              {status === "submitting" ? "Submitting..." : "Submit Enquiry"}
             </button>
           </form>
 
@@ -186,17 +205,19 @@ export default function EnquiryPage() {
             </div>
           )}
 
-          {status && (
-            <div
-              className={`mx-5 mb-4 rounded-xl px-4 py-3 text-sm font-semibold ${
-                status.startsWith("Failed")
-                  ? "bg-red-50 text-red-700"
-                  : status === "Submitting..."
-                    ? "bg-amber-50 text-amber-700"
-                    : "bg-emerald-50 text-emerald-700"
-              }`}
-            >
-              {status}
+          {status === "success" && (
+            <div className="mx-5 mb-4 rounded-xl bg-emerald-50 px-4 py-3 text-sm font-semibold text-emerald-700">
+              Your enquiry has been submitted successfully! We&apos;ll get back to you soon.
+            </div>
+          )}
+
+          {status === "error" && (
+            <div className="mx-5 mb-4 rounded-xl bg-red-50 px-4 py-3 text-sm text-red-700">
+              <p className="font-semibold">Something went wrong. Please try again.</p>
+              <p className="mt-1 text-xs text-red-500">
+                Make sure your name, phone number (8+ digits), and city are filled in correctly.
+                You can also use the WhatsApp button above to send your enquiry directly.
+              </p>
             </div>
           )}
         </section>
