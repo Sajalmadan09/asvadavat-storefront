@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useEnquiryStore } from "@/components/enquiry-store";
+import { useToast } from "@/components/toast";
 import type { ProductPrice } from "@/types/catalog";
 
 type AddToEnquiryButtonProps = {
@@ -18,11 +19,13 @@ export function AddToEnquiryButton({
   price,
 }: AddToEnquiryButtonProps) {
   const { addItem } = useEnquiryStore();
+  const { showToast } = useToast();
   const [added, setAdded] = useState(false);
 
   return (
     <button
       type="button"
+      disabled={added}
       onClick={() => {
         addItem({
           productId,
@@ -32,12 +35,17 @@ export function AddToEnquiryButton({
           netPriceInr: price.netPriceInr,
           qty: 1,
         });
+        showToast(productName);
         setAdded(true);
-        window.setTimeout(() => setAdded(false), 1200);
+        window.setTimeout(() => setAdded(false), 1400);
       }}
-      className="rounded-md bg-amber-800 px-3 py-2 text-sm font-semibold text-amber-50 hover:bg-amber-700"
+      className={`rounded-lg px-4 py-2.5 text-sm font-bold shadow transition-all active:scale-95 ${
+        added
+          ? "bg-emerald-600 text-white"
+          : "bg-gradient-to-r from-amber-700 to-amber-900 text-amber-50 hover:shadow-md"
+      }`}
     >
-      {added ? "Added" : `Add (${price.packSize})`}
+      {added ? "\u2713 Added" : `Add (${price.packSize})`}
     </button>
   );
 }
