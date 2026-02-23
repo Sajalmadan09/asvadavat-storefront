@@ -15,6 +15,11 @@ export const metadata: Metadata = {
     description: "Browse tea and spices with pack-wise pricing.",
     type: "website",
   },
+  icons: {
+    icon: "/asvadavat-icon.png",
+    apple: "/asvadavat-icon.png",
+    shortcut: "/asvadavat-icon.png",
+  },
 };
 
 export default function RootLayout({
