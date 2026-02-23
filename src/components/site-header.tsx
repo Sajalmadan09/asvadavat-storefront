@@ -33,8 +33,8 @@ export function SiteHeader() {
           <div className="absolute inset-y-0 right-0 w-1/2 bg-gradient-to-l from-white to-transparent md:w-1/3" />
         </div>
 
-        {/* Right spice filler — full bleed */}
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-[30%] md:w-[35%]" aria-hidden>
+        {/* Right spice filler — hidden on mobile to keep menu/cart visible */}
+        <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-[35%] md:block" aria-hidden>
           <Image
             src="/header-spice-right.png"
             alt=""
@@ -42,7 +42,7 @@ export function SiteHeader() {
             className="object-cover object-left"
             sizes="35vw"
           />
-          <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-white to-transparent md:w-1/3" />
+          <div className="absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white to-transparent" />
         </div>
 
         {/* Center content */}
