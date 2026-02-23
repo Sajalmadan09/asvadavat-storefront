@@ -21,13 +21,13 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 border-b border-amber-200/80 bg-white/90 backdrop-blur-lg">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-2.5 md:py-3">
         {/* Logo */}
-        <Link href="/" className="relative h-14 w-56 shrink-0 md:h-16 md:w-72 lg:h-20 lg:w-96">
+        <Link href="/" className="relative h-16 w-64 shrink-0 md:h-20 md:w-80 lg:h-24 lg:w-[30rem]">
           <Image
             src="/asvadavat-logo-header.png"
             alt="Asvadavat"
             fill
             className="object-contain object-left"
-            sizes="(max-width: 768px) 224px, (max-width: 1024px) 288px, 384px"
+            sizes="(max-width: 768px) 256px, (max-width: 1024px) 320px, 480px"
             priority
           />
         </Link>
