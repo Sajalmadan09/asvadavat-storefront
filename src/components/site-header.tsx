@@ -18,7 +18,7 @@ export function SiteHeader() {
   const count = isHydrated ? totalLines : 0;
 
   return (
-    <header className="sticky top-0 z-40 border-b border-amber-200/80 bg-white/90 backdrop-blur-lg">
+    <header className="sticky top-0 z-40 border-b border-amber-200/80 bg-white backdrop-blur-lg">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-2.5 md:py-3">
         {/* Logo */}
         <Link href="/" className="relative h-16 w-64 shrink-0 md:h-20 md:w-80 lg:h-24 lg:w-[30rem]">
