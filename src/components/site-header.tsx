@@ -23,13 +23,13 @@ export function SiteHeader() {
       <div className="mx-auto w-full max-w-6xl px-4">
         <div className="flex items-center justify-between py-3 md:justify-center md:py-4">
           {/* Logo */}
-          <Link href="/" className="relative block h-14 w-56 shrink-0 md:h-20 md:w-[26rem] lg:h-24 lg:w-[34rem]">
+          <Link href="/" className="relative block h-20 w-72 shrink-0 md:h-28 md:w-[32rem] lg:h-36 lg:w-[42rem]">
             <Image
               src="/asvadavat-logo-header.png"
               alt="Asvadavat — Spice & Tea Company"
               fill
               className="object-contain"
-              sizes="(max-width: 768px) 224px, (max-width: 1024px) 416px, 544px"
+              sizes="(max-width: 768px) 288px, (max-width: 1024px) 512px, 672px"
               priority
             />
           </Link>
