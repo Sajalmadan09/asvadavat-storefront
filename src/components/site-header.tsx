@@ -48,13 +48,13 @@ export function SiteHeader() {
         {/* Center content */}
         <div className="relative z-10 mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-3 md:justify-center md:py-5">
           {/* Logo — left on mobile, centered on desktop */}
-          <Link href="/" className="relative block h-12 w-40 shrink-0 md:h-28 md:w-[32rem] lg:h-36 lg:w-[42rem]">
+          <Link href="/" className="relative block h-16 w-52 shrink-0 md:h-28 md:w-[32rem] lg:h-36 lg:w-[42rem]">
             <Image
               src="/asvadavat-logo-header.png"
               alt="Asvadavat — Spice & Tea Company"
               fill
               className="object-contain object-left md:object-center"
-              sizes="(max-width: 768px) 160px, (max-width: 1024px) 512px, 672px"
+              sizes="(max-width: 768px) 208px, (max-width: 1024px) 512px, 672px"
               priority
             />
           </Link>
