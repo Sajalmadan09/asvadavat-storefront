@@ -26,14 +26,14 @@ export function SiteHeader() {
   return (
     <>
       {/* ── Desktop: logo banner (scrolls away) ── */}
-      <div className="relative hidden w-full overflow-hidden border-b border-[#e8e0d0] bg-[#faf8f4] md:block">
+      <div className="relative hidden w-full overflow-hidden border-b border-[#e8e0d0] bg-white md:block">
         <div className="pointer-events-none absolute inset-y-0 left-0 w-[35%]" aria-hidden>
           <Image src="/header-spice-left.png" alt="" fill className="object-cover object-right" sizes="35vw" />
-          <div className="absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-[#faf8f4] to-transparent" />
+          <div className="absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white to-transparent" />
         </div>
         <div className="pointer-events-none absolute inset-y-0 right-0 w-[35%]" aria-hidden>
           <Image src="/header-spice-right.png" alt="" fill className="object-cover object-left" sizes="35vw" />
-          <div className="absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-[#faf8f4] to-transparent" />
+          <div className="absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white to-transparent" />
         </div>
         <div className="relative z-10 mx-auto flex w-full max-w-6xl items-center justify-center px-4 py-5">
           <Link href="/" className="relative block h-28 w-[32rem] shrink-0 lg:h-36 lg:w-[42rem]">
@@ -50,7 +50,7 @@ export function SiteHeader() {
       </div>
 
       {/* ── Desktop: sticky nav bar ── */}
-      <nav className="sticky top-0 z-40 hidden items-center justify-center gap-1 border-b border-[#e8e0d0] bg-[#faf8f4] py-2 shadow-sm md:flex">
+      <nav className="sticky top-0 z-40 hidden items-center justify-center gap-1 border-b border-[#e8e0d0] bg-white py-2 shadow-sm md:flex">
         {NAV_LINKS.map((link) => (
           <Link
             key={link.href}
@@ -85,10 +85,10 @@ export function SiteHeader() {
       </nav>
 
       {/* ── Mobile: premium sticky navbar ── */}
-      <div className="sticky top-0 z-40 border-b border-[#e8e0d0] bg-[#faf8f4] shadow-sm md:hidden">
+      <div className="sticky top-0 z-40 border-b border-[#e8e0d0] bg-white shadow-sm md:hidden">
         <div className="flex items-center justify-between px-4 py-2.5">
           {/* Left: Logo — anchor of the page */}
-          <Link href="/" className="flex flex-col items-start rounded-md bg-white p-1">
+          <Link href="/" className="flex flex-col items-start">
             <div className="relative h-10 w-36">
               <Image
                 src="/asvadavat-logo-header.png"
@@ -150,7 +150,7 @@ export function SiteHeader() {
               <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
             </svg>
             {count > 0 && (
-              <span className="animate-badge-pop absolute -right-0.5 -top-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-[8px] font-bold text-white ring-2 ring-[#faf8f4]">
+              <span className="animate-badge-pop absolute -right-0.5 -top-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-[8px] font-bold text-white ring-2 ring-white">
                 {count}
               </span>
             )}
@@ -160,7 +160,7 @@ export function SiteHeader() {
 
       {/* ── Mobile drawer ── */}
       {menuOpen && (
-        <div className="sticky top-[6.5rem] z-40 animate-slide-down border-b border-[#e8e0d0] bg-[#faf8f4] px-4 pb-5 pt-2 shadow-md md:hidden">
+        <div className="sticky top-[6.5rem] z-40 animate-slide-down border-b border-[#e8e0d0] bg-white px-4 pb-5 pt-2 shadow-md md:hidden">
           <nav className="flex flex-col gap-1">
             <Link
               href="/products"
