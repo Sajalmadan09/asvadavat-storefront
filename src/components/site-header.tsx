@@ -32,56 +32,17 @@ export function SiteHeader() {
           <div className="absolute inset-y-0 right-0 w-1/2 bg-gradient-to-l from-white to-transparent md:hidden" />
         </div>
 
-        <div className="relative z-10 mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-3 md:justify-center md:py-5">
+        <div className="relative z-10 mx-auto flex w-full max-w-6xl items-center justify-center px-4 py-3 md:py-5">
           <Link href="/" className="relative block h-16 w-52 shrink-0 md:h-28 md:w-[32rem] lg:h-36 lg:w-[42rem]">
             <Image
               src="/asvadavat-logo-header.png"
               alt="Asvadavat — Spice & Tea Company"
               fill
-              className="object-contain object-left md:object-center"
+              className="object-contain"
               sizes="(max-width: 768px) 208px, (max-width: 1024px) 512px, 672px"
               priority
             />
           </Link>
-
-          {/* Mobile action buttons (inside logo banner) */}
-          <div className="flex items-center gap-0.5 md:hidden">
-            <Link
-              href="/products"
-              className="flex items-center gap-1 rounded-full bg-gradient-to-r from-green-700 to-green-900 px-3.5 py-2 text-xs font-bold text-green-50 shadow active:scale-95"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="h-4 w-4">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-              </svg>
-              Buy
-            </Link>
-            <Link href="/enquiry" className="relative rounded-lg p-2 text-green-900 active:bg-green-100">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="h-5 w-5">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
-              </svg>
-              {count > 0 && (
-                <span className="animate-badge-pop absolute right-0.5 top-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-[8px] font-bold text-white ring-2 ring-white">
-                  {count}
-                </span>
-              )}
-            </Link>
-            <button
-              type="button"
-              onClick={() => setMenuOpen(!menuOpen)}
-              className="rounded-lg p-2 text-green-900 active:bg-green-100"
-              aria-label="Toggle menu"
-            >
-              {menuOpen ? (
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="h-5 w-5">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
-                </svg>
-              ) : (
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="h-5 w-5">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                </svg>
-              )}
-            </button>
-          </div>
         </div>
       </div>
 
