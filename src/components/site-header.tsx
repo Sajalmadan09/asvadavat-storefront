@@ -88,7 +88,7 @@ export function SiteHeader() {
       <div className="sticky top-0 z-40 border-b border-[#e8e0d0] bg-[#faf8f4] shadow-sm md:hidden">
         <div className="flex items-center justify-between px-4 py-2.5">
           {/* Left: Logo — anchor of the page */}
-          <Link href="/" className="flex flex-col items-start">
+          <Link href="/" className="flex flex-col items-start rounded-md bg-white p-1">
             <div className="relative h-10 w-36">
               <Image
                 src="/asvadavat-logo-header.png"
@@ -111,16 +111,6 @@ export function SiteHeader() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
               </svg>
               Buy
-            </Link>
-            <Link href="/enquiry" className="relative rounded-lg p-2 text-[#1a1a1a] active:bg-[#f0ebe3]">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="h-5 w-5">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
-              </svg>
-              {count > 0 && (
-                <span className="animate-badge-pop absolute -right-0.5 -top-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-[8px] font-bold text-white ring-2 ring-[#faf8f4]">
-                  {count}
-                </span>
-              )}
             </Link>
             <button
               type="button"
@@ -154,9 +144,16 @@ export function SiteHeader() {
           ))}
           <Link
             href="/enquiry"
-            className="ml-auto rounded-md px-3 py-1 text-xs font-semibold text-[#2d6a4f] active:bg-[#f0ebe3]"
+            className="relative ml-auto rounded-md p-1.5 text-[#1a1a1a] active:bg-[#f0ebe3]"
           >
-            Enquiry {count > 0 && `(${count})`}
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="h-5 w-5">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+            </svg>
+            {count > 0 && (
+              <span className="animate-badge-pop absolute -right-0.5 -top-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-[8px] font-bold text-white ring-2 ring-[#faf8f4]">
+                {count}
+              </span>
+            )}
           </Link>
         </div>
       </div>
