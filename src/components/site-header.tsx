@@ -26,10 +26,9 @@ export function SiteHeader() {
           <div className="absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white to-transparent" />
         </div>
 
-        <div className="pointer-events-none absolute inset-y-0 left-[38%] w-[28%] md:left-auto md:right-0 md:w-[35%]" aria-hidden>
-          <Image src="/header-spice-right.png" alt="" fill className="object-cover object-center md:object-left" sizes="35vw" />
-          <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-white to-transparent md:w-1/3" />
-          <div className="absolute inset-y-0 right-0 w-1/2 bg-gradient-to-l from-white to-transparent md:hidden" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-[35%] md:block" aria-hidden>
+          <Image src="/header-spice-right.png" alt="" fill className="object-cover object-left" sizes="35vw" />
+          <div className="absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white to-transparent" />
         </div>
 
         <div className="relative z-10 mx-auto flex w-full max-w-6xl items-center justify-center px-4 py-3 md:py-5">
