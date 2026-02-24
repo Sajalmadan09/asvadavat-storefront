@@ -34,7 +34,7 @@ export function SiteHeader() {
         </div>
 
         {/* Right spice filler — on mobile sits between logo and buttons, desktop right side */}
-        <div className="pointer-events-none absolute inset-y-0 right-[30%] w-[25%] md:right-0 md:w-[35%]" aria-hidden>
+        <div className="pointer-events-none absolute inset-y-0 left-[38%] w-[28%] md:left-auto md:right-0 md:w-[35%]" aria-hidden>
           <Image
             src="/header-spice-right.png"
             alt=""
