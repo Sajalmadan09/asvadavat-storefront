@@ -21,8 +21,8 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 border-b border-amber-200/80 bg-white shadow-sm">
       {/* Top row: logo centered with spice fillers edge-to-edge */}
       <div className="relative w-full overflow-hidden">
-        {/* Left spice filler — full bleed */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-[30%] md:w-[35%]" aria-hidden>
+        {/* Left spice filler — desktop only (logo covers this area on mobile) */}
+        <div className="pointer-events-none absolute inset-y-0 left-0 hidden w-[35%] md:block" aria-hidden>
           <Image
             src="/header-spice-left.png"
             alt=""
@@ -30,19 +30,20 @@ export function SiteHeader() {
             className="object-cover object-right"
             sizes="35vw"
           />
-          <div className="absolute inset-y-0 right-0 w-1/2 bg-gradient-to-l from-white to-transparent md:w-1/3" />
+          <div className="absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white to-transparent" />
         </div>
 
-        {/* Right spice filler — hidden on mobile to keep menu/cart visible */}
-        <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-[35%] md:block" aria-hidden>
+        {/* Right spice filler — on mobile sits between logo and buttons, desktop right side */}
+        <div className="pointer-events-none absolute inset-y-0 right-[30%] w-[25%] md:right-0 md:w-[35%]" aria-hidden>
           <Image
             src="/header-spice-right.png"
             alt=""
             fill
-            className="object-cover object-left"
+            className="object-cover object-center md:object-left"
             sizes="35vw"
           />
-          <div className="absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white to-transparent" />
+          <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-white to-transparent md:w-1/3" />
+          <div className="absolute inset-y-0 right-0 w-1/2 bg-gradient-to-l from-white to-transparent md:hidden" />
         </div>
 
         {/* Center content */}
