@@ -18,8 +18,9 @@ export function SiteHeader() {
   const count = isHydrated ? totalLines : 0;
 
   return (
-    <header className="sticky top-0 z-40 border-b border-olive-200/80 bg-white shadow-sm">
-      <div className="relative w-full overflow-hidden">
+    <>
+      {/* Logo banner — scrolls away naturally with the page */}
+      <div className="relative w-full overflow-hidden border-b border-olive-200/80 bg-white">
         <div className="pointer-events-none absolute inset-y-0 left-0 hidden w-[35%] md:block" aria-hidden>
           <Image src="/header-spice-left.png" alt="" fill className="object-cover object-right" sizes="35vw" />
           <div className="absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white to-transparent" />
@@ -43,6 +44,7 @@ export function SiteHeader() {
             />
           </Link>
 
+          {/* Mobile action buttons (inside logo banner) */}
           <div className="flex items-center gap-0.5 md:hidden">
             <Link
               href="/products"
@@ -83,7 +85,8 @@ export function SiteHeader() {
         </div>
       </div>
 
-      <nav className="relative z-10 hidden items-center justify-center gap-1 border-t border-olive-100 bg-white py-2 md:flex">
+      {/* Sticky nav bar — pins to top when logo scrolls away */}
+      <nav className="sticky top-0 z-40 hidden items-center justify-center gap-1 border-b border-olive-200/80 bg-white py-2 shadow-sm md:flex">
         <Link href="/products" className="rounded-lg px-4 py-2 text-sm font-semibold tracking-wide text-green-900 transition-colors hover:bg-green-50">
           Products
         </Link>
@@ -118,8 +121,59 @@ export function SiteHeader() {
         </button>
       </nav>
 
+      {/* Mobile sticky bar — compact bar with key actions that sticks on scroll */}
+      <div className="sticky top-0 z-40 flex items-center justify-between border-b border-olive-200/80 bg-white px-4 py-2 shadow-sm md:hidden">
+        <Link href="/" className="relative block h-8 w-28 shrink-0">
+          <Image
+            src="/asvadavat-logo-header.png"
+            alt="Asvadavat"
+            fill
+            className="object-contain object-left"
+            sizes="112px"
+          />
+        </Link>
+        <div className="flex items-center gap-1">
+          <Link
+            href="/products"
+            className="flex items-center gap-1 rounded-full bg-gradient-to-r from-green-700 to-green-900 px-3 py-1.5 text-xs font-bold text-green-50 shadow active:scale-95"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="h-3.5 w-3.5">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+            </svg>
+            Buy
+          </Link>
+          <Link href="/enquiry" className="relative rounded-lg p-1.5 text-green-900 active:bg-green-100">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="h-4.5 w-4.5">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+            </svg>
+            {count > 0 && (
+              <span className="animate-badge-pop absolute -right-0.5 -top-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-[8px] font-bold text-white ring-2 ring-white">
+                {count}
+              </span>
+            )}
+          </Link>
+          <button
+            type="button"
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="rounded-lg p-1.5 text-green-900 active:bg-green-100"
+            aria-label="Toggle menu"
+          >
+            {menuOpen ? (
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="h-5 w-5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="h-5 w-5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+              </svg>
+            )}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile drawer */}
       {menuOpen && (
-        <div className="animate-slide-down border-t border-olive-100 bg-white px-4 pb-5 pt-2 md:hidden">
+        <div className="sticky top-12 z-40 animate-slide-down border-b border-olive-100 bg-white px-4 pb-5 pt-2 shadow-md md:hidden">
           <nav className="flex flex-col gap-1">
             <Link
               href="/products"
@@ -166,6 +220,6 @@ export function SiteHeader() {
           </nav>
         </div>
       )}
-    </header>
+    </>
   );
 }
