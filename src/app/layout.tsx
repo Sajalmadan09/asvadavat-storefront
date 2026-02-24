@@ -30,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className="bg-amber-50 antialiased">
+      <body className="bg-olive-50 antialiased">
         <ClarityAnalytics />
         <AppShell>{children}</AppShell>
       </body>

@@ -74,15 +74,15 @@ export function OnboardingTour() {
     <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/50 p-4 backdrop-blur-sm">
       <div className="animate-scale-in w-full max-w-[22rem] rounded-3xl bg-white p-6 shadow-2xl">
         <div className="mb-3 text-center text-5xl">{current.icon}</div>
-        <h3 className="text-center text-xl font-extrabold text-amber-950">{current.title}</h3>
-        <p className="mt-3 text-center text-sm leading-relaxed text-amber-700">{current.body}</p>
+        <h3 className="text-center text-xl font-extrabold text-green-950">{current.title}</h3>
+        <p className="mt-3 text-center text-sm leading-relaxed text-olive-600">{current.body}</p>
 
         <div className="mt-5 flex justify-center gap-1.5">
           {steps.map((_, i) => (
             <div
               key={i}
               className={`h-2 rounded-full transition-all duration-300 ${
-                i === step ? "w-6 bg-amber-600" : i < step ? "w-2 bg-amber-400" : "w-2 bg-amber-200"
+                i === step ? "w-6 bg-green-600" : i < step ? "w-2 bg-green-400" : "w-2 bg-olive-200"
               }`}
             />
           ))}
@@ -92,14 +92,14 @@ export function OnboardingTour() {
           <button
             type="button"
             onClick={finish}
-            className="flex-1 rounded-xl border border-amber-200 py-2.5 text-sm font-medium text-amber-600 transition-colors hover:bg-amber-50 active:bg-amber-100"
+            className="flex-1 rounded-xl border border-olive-200 py-2.5 text-sm font-medium text-olive-500 transition-colors hover:bg-green-50 active:bg-green-100"
           >
             Skip
           </button>
           <button
             type="button"
             onClick={next}
-            className="flex-1 rounded-xl bg-gradient-to-r from-amber-600 to-orange-500 py-2.5 text-sm font-bold text-white shadow-md transition-transform active:scale-95"
+            className="flex-1 rounded-xl bg-gradient-to-r from-green-600 to-emerald-600 py-2.5 text-sm font-bold text-white shadow-md transition-transform active:scale-95"
           >
             {step === steps.length - 1 ? "Get Started" : "Next"}
           </button>

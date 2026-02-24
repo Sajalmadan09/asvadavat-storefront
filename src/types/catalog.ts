@@ -24,6 +24,7 @@ export type Product = {
   tags: string[];
   prices: ProductPrice[];
   imagePrompt: string;
+  ingredients?: string[];
 };
 
 export type EnquiryItem = {

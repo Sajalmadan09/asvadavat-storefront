@@ -84,7 +84,6 @@ export function WhatsAppFab() {
 
   return (
     <>
-      {/* Floating button */}
       <button
         type="button"
         onClick={handleClick}
@@ -101,7 +100,6 @@ export function WhatsAppFab() {
         )}
       </button>
 
-      {/* Empty-cart modal */}
       {modalOpen && (
         <div className="fixed inset-0 z-[60] flex items-end justify-center p-4 sm:items-center">
           <div
@@ -115,15 +113,13 @@ export function WhatsAppFab() {
           <div className="animate-slide-up relative w-full max-w-md rounded-t-3xl bg-white p-6 shadow-2xl sm:rounded-3xl">
             <div className="mb-1 flex items-start justify-between">
               <div>
-                <h3 className="text-lg font-extrabold text-amber-950">Chat with us</h3>
-                <p className="mt-0.5 text-sm text-amber-600">
-                  Your enquiry basket is empty. How can we help?
-                </p>
+                <h3 className="text-lg font-extrabold text-green-950">Chat with us</h3>
+                <p className="mt-0.5 text-sm text-olive-500">Your enquiry basket is empty. How can we help?</p>
               </div>
               <button
                 type="button"
                 onClick={() => setModalOpen(false)}
-                className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-amber-400 transition-colors hover:bg-amber-100 hover:text-amber-700"
+                className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-olive-400 transition-colors hover:bg-green-50 hover:text-green-700"
                 aria-label="Close"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="h-5 w-5">
@@ -141,18 +137,16 @@ export function WhatsAppFab() {
                     openWhatsApp(option.message);
                     setModalOpen(false);
                   }}
-                  className="flex w-full items-start gap-3 rounded-2xl border border-amber-100 bg-amber-50/50 px-4 py-4 text-left transition-all hover:border-amber-300 hover:bg-amber-50 active:scale-[0.98]"
+                  className="flex w-full items-start gap-3 rounded-2xl border border-olive-100 bg-green-50/50 px-4 py-4 text-left transition-all hover:border-green-300 hover:bg-green-50 active:scale-[0.98]"
                 >
                   <span className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white text-xl shadow-sm">
                     {option.icon}
                   </span>
                   <div className="min-w-0">
-                    <p className="text-sm font-bold text-amber-950">{option.label}</p>
-                    <p className="mt-0.5 text-xs leading-relaxed text-amber-600">
-                      {option.description}
-                    </p>
+                    <p className="text-sm font-bold text-green-950">{option.label}</p>
+                    <p className="mt-0.5 text-xs leading-relaxed text-olive-500">{option.description}</p>
                   </div>
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="mt-2 h-4 w-4 shrink-0 text-amber-400">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="mt-2 h-4 w-4 shrink-0 text-olive-400">
                     <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                   </svg>
                 </button>
@@ -162,12 +156,12 @@ export function WhatsAppFab() {
             <button
               type="button"
               onClick={() => setModalOpen(false)}
-              className="mt-4 w-full rounded-xl border border-amber-200 py-3 text-sm font-semibold text-amber-700 transition-colors hover:bg-amber-50 active:bg-amber-100"
+              className="mt-4 w-full rounded-xl border border-olive-200 py-3 text-sm font-semibold text-green-700 transition-colors hover:bg-green-50 active:bg-green-100"
             >
               Continue Shopping
             </button>
 
-            <p className="mt-3 text-center text-[11px] text-amber-400">
+            <p className="mt-3 text-center text-[11px] text-olive-400">
               Tip: Add products to your enquiry basket first for a pre-filled message!
             </p>
           </div>

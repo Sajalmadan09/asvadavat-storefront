@@ -1,13 +1,24 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fffbeb;
-  --foreground: #3f2400;
+  --background: #f7f7f2;
+  --foreground: #1a2e1a;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-olive-50: #f5f5ef;
+  --color-olive-100: #e8e8dd;
+  --color-olive-200: #d4d4c4;
+  --color-olive-300: #b5b59a;
+  --color-olive-400: #8d8d6e;
+  --color-olive-500: #6b6b4e;
+  --color-olive-600: #555540;
+  --color-olive-700: #434335;
+  --color-olive-800: #35352c;
+  --color-olive-900: #2a2a22;
+  --color-olive-950: #1a1a14;
   --font-sans: "Inter", "Segoe UI", Arial, sans-serif;
   --font-mono: "SFMono-Regular", Menlo, Monaco, Consolas, monospace;
   --animate-slide-up: slide-up 0.35s ease-out forwards;

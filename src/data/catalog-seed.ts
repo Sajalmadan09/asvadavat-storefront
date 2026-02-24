@@ -5,6 +5,13 @@ export const categoryLabels = {
   spices: "Spices",
 } as const;
 
+export const FSSAI_INFO = {
+  licenseNo: "XXXXXXXXXXX",
+  marketerName: "ASVADAVAT Food Products",
+  marketerAddress: "To be updated",
+  logoAlt: "FSSAI — Food Safety and Standards Authority of India",
+} as const;
+
 export const products: Product[] = [
   {
     id: "tea-ctc-black-tea",
@@ -101,6 +108,7 @@ export const products: Product[] = [
     tags: ["blend", "masala"],
     prices: [{ packSize: "100g", netPriceInr: 82 }],
     imagePrompt: "Chana masala spice mix packshot, warm red tones",
+    ingredients: ["Coriander", "Red Chilli", "Cumin", "Black Pepper", "Dry Mango Powder", "Dried Ginger", "Cinnamon", "Clove", "Black Cardamom", "Bay Leaf", "Salt"],
   },
   {
     id: "spice-coriander-powder",
@@ -123,6 +131,7 @@ export const products: Product[] = [
     tags: ["blend", "garam-masala"],
     prices: [{ packSize: "100g", netPriceInr: 150 }],
     imagePrompt: "Garam masala premium packshot with rustic wood background",
+    ingredients: ["Coriander", "Cumin", "Black Pepper", "Cinnamon", "Clove", "Cardamom", "Black Cardamom", "Bay Leaf", "Nutmeg", "Mace"],
   },
   {
     id: "spice-turmeric-powder",
@@ -233,6 +242,7 @@ export const products: Product[] = [
     tags: ["blend", "tea"],
     prices: [{ packSize: "50g", netPriceInr: 78 }],
     imagePrompt: "Chai masala packet image with tea cup prop",
+    ingredients: ["Dried Ginger", "Cardamom", "Cinnamon", "Black Pepper", "Clove", "Nutmeg"],
   },
   {
     id: "spice-clove",

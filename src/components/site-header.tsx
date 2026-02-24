@@ -18,37 +18,20 @@ export function SiteHeader() {
   const count = isHydrated ? totalLines : 0;
 
   return (
-    <header className="sticky top-0 z-40 border-b border-amber-200/80 bg-white shadow-sm">
-      {/* Top row: logo centered with spice fillers edge-to-edge */}
+    <header className="sticky top-0 z-40 border-b border-olive-200/80 bg-white shadow-sm">
       <div className="relative w-full overflow-hidden">
-        {/* Left spice filler — desktop only (logo covers this area on mobile) */}
         <div className="pointer-events-none absolute inset-y-0 left-0 hidden w-[35%] md:block" aria-hidden>
-          <Image
-            src="/header-spice-left.png"
-            alt=""
-            fill
-            className="object-cover object-right"
-            sizes="35vw"
-          />
+          <Image src="/header-spice-left.png" alt="" fill className="object-cover object-right" sizes="35vw" />
           <div className="absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white to-transparent" />
         </div>
 
-        {/* Right spice filler — on mobile sits between logo and buttons, desktop right side */}
         <div className="pointer-events-none absolute inset-y-0 left-[38%] w-[28%] md:left-auto md:right-0 md:w-[35%]" aria-hidden>
-          <Image
-            src="/header-spice-right.png"
-            alt=""
-            fill
-            className="object-cover object-center md:object-left"
-            sizes="35vw"
-          />
+          <Image src="/header-spice-right.png" alt="" fill className="object-cover object-center md:object-left" sizes="35vw" />
           <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-white to-transparent md:w-1/3" />
           <div className="absolute inset-y-0 right-0 w-1/2 bg-gradient-to-l from-white to-transparent md:hidden" />
         </div>
 
-        {/* Center content */}
         <div className="relative z-10 mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-3 md:justify-center md:py-5">
-          {/* Logo — left on mobile, centered on desktop */}
           <Link href="/" className="relative block h-16 w-52 shrink-0 md:h-28 md:w-[32rem] lg:h-36 lg:w-[42rem]">
             <Image
               src="/asvadavat-logo-header.png"
@@ -60,18 +43,17 @@ export function SiteHeader() {
             />
           </Link>
 
-          {/* Mobile controls — right side for thumb access */}
           <div className="flex items-center gap-0.5 md:hidden">
             <Link
               href="/products"
-              className="flex items-center gap-1 rounded-full bg-gradient-to-r from-amber-700 to-amber-900 px-3.5 py-2 text-xs font-bold text-amber-50 shadow active:scale-95"
+              className="flex items-center gap-1 rounded-full bg-gradient-to-r from-green-700 to-green-900 px-3.5 py-2 text-xs font-bold text-green-50 shadow active:scale-95"
             >
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="h-4 w-4">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
               </svg>
               Buy
             </Link>
-            <Link href="/enquiry" className="relative rounded-lg p-2 text-amber-900 active:bg-amber-100">
+            <Link href="/enquiry" className="relative rounded-lg p-2 text-green-900 active:bg-green-100">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="h-5 w-5">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
               </svg>
@@ -84,7 +66,7 @@ export function SiteHeader() {
             <button
               type="button"
               onClick={() => setMenuOpen(!menuOpen)}
-              className="rounded-lg p-2 text-amber-900 active:bg-amber-100"
+              className="rounded-lg p-2 text-green-900 active:bg-green-100"
               aria-label="Toggle menu"
             >
               {menuOpen ? (
@@ -101,32 +83,22 @@ export function SiteHeader() {
         </div>
       </div>
 
-      {/* Desktop nav bar */}
-      <nav className="relative z-10 hidden items-center justify-center gap-1 border-t border-amber-100 bg-white py-2 md:flex">
-        <Link
-          href="/products"
-          className="rounded-lg px-4 py-2 text-sm font-semibold tracking-wide text-amber-900 transition-colors hover:bg-amber-100"
-        >
+      <nav className="relative z-10 hidden items-center justify-center gap-1 border-t border-olive-100 bg-white py-2 md:flex">
+        <Link href="/products" className="rounded-lg px-4 py-2 text-sm font-semibold tracking-wide text-green-900 transition-colors hover:bg-green-50">
           Products
         </Link>
-        <span className="text-amber-200">|</span>
-        <Link
-          href="/products?category=tea"
-          className="rounded-lg px-4 py-2 text-sm font-semibold tracking-wide text-amber-900 transition-colors hover:bg-emerald-50 hover:text-emerald-800"
-        >
+        <span className="text-olive-300">|</span>
+        <Link href="/products?category=tea" className="rounded-lg px-4 py-2 text-sm font-semibold tracking-wide text-green-900 transition-colors hover:bg-emerald-50 hover:text-emerald-800">
           Tea
         </Link>
-        <span className="text-amber-200">|</span>
-        <Link
-          href="/products?category=spices"
-          className="rounded-lg px-4 py-2 text-sm font-semibold tracking-wide text-amber-900 transition-colors hover:bg-orange-50 hover:text-orange-800"
-        >
+        <span className="text-olive-300">|</span>
+        <Link href="/products?category=spices" className="rounded-lg px-4 py-2 text-sm font-semibold tracking-wide text-green-900 transition-colors hover:bg-orange-50 hover:text-orange-800">
           Spices
         </Link>
-        <span className="text-amber-200">|</span>
+        <span className="text-olive-300">|</span>
         <Link
           href="/enquiry"
-          className="relative rounded-full bg-gradient-to-r from-amber-700 to-amber-900 px-6 py-2 text-sm font-bold text-amber-50 shadow transition-transform hover:scale-105 active:scale-95"
+          className="relative rounded-full bg-gradient-to-r from-green-700 to-green-900 px-6 py-2 text-sm font-bold text-green-50 shadow transition-transform hover:scale-105 active:scale-95"
         >
           Enquiry
           {count > 0 && (
@@ -138,7 +110,7 @@ export function SiteHeader() {
         <button
           type="button"
           onClick={() => window.dispatchEvent(new Event("asvadavat-restart-tour"))}
-          className="ml-2 flex h-8 w-8 items-center justify-center rounded-full border border-amber-200 text-sm font-bold text-amber-600 transition-colors hover:bg-amber-100"
+          className="ml-2 flex h-8 w-8 items-center justify-center rounded-full border border-olive-200 text-sm font-bold text-green-700 transition-colors hover:bg-green-50"
           aria-label="Help tour"
           title="Show guide"
         >
@@ -146,22 +118,21 @@ export function SiteHeader() {
         </button>
       </nav>
 
-      {/* Mobile drawer */}
       {menuOpen && (
-        <div className="animate-slide-down border-t border-amber-100 bg-white px-4 pb-5 pt-2 md:hidden">
+        <div className="animate-slide-down border-t border-olive-100 bg-white px-4 pb-5 pt-2 md:hidden">
           <nav className="flex flex-col gap-1">
             <Link
               href="/products"
               onClick={() => setMenuOpen(false)}
-              className="flex items-center gap-3 rounded-xl px-4 py-3.5 text-base font-semibold text-amber-900 active:bg-amber-50"
+              className="flex items-center gap-3 rounded-xl px-4 py-3.5 text-base font-semibold text-green-900 active:bg-green-50"
             >
-              <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-amber-100 text-lg">{"\u{1F6CD}\uFE0F"}</span>
+              <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-green-100 text-lg">{"\u{1F6CD}\uFE0F"}</span>
               All Products
             </Link>
             <Link
               href="/products?category=tea"
               onClick={() => setMenuOpen(false)}
-              className="flex items-center gap-3 rounded-xl px-4 py-3.5 text-base font-semibold text-amber-900 active:bg-emerald-50"
+              className="flex items-center gap-3 rounded-xl px-4 py-3.5 text-base font-semibold text-green-900 active:bg-emerald-50"
             >
               <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-emerald-100 text-lg">{"\u{1F375}"}</span>
               Tea
@@ -169,16 +140,16 @@ export function SiteHeader() {
             <Link
               href="/products?category=spices"
               onClick={() => setMenuOpen(false)}
-              className="flex items-center gap-3 rounded-xl px-4 py-3.5 text-base font-semibold text-amber-900 active:bg-orange-50"
+              className="flex items-center gap-3 rounded-xl px-4 py-3.5 text-base font-semibold text-green-900 active:bg-orange-50"
             >
               <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-orange-100 text-lg">{"\u{1F336}\uFE0F"}</span>
               Spices
             </Link>
-            <div className="my-2 border-t border-amber-100" />
+            <div className="my-2 border-t border-olive-100" />
             <Link
               href="/enquiry"
               onClick={() => setMenuOpen(false)}
-              className="flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-amber-700 to-amber-900 px-4 py-3.5 text-base font-bold text-amber-50 shadow-md active:scale-[0.98]"
+              className="flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-green-700 to-green-900 px-4 py-3.5 text-base font-bold text-green-50 shadow-md active:scale-[0.98]"
             >
               {"\u{1F4CB}"} Enquiry Basket {count > 0 && `(${count})`}
             </Link>
@@ -188,7 +159,7 @@ export function SiteHeader() {
                 setMenuOpen(false);
                 window.dispatchEvent(new Event("asvadavat-restart-tour"));
               }}
-              className="mt-1 flex items-center justify-center gap-2 rounded-xl border border-amber-200 px-4 py-3 text-sm font-medium text-amber-700 active:bg-amber-50"
+              className="mt-1 flex items-center justify-center gap-2 rounded-xl border border-olive-200 px-4 py-3 text-sm font-medium text-green-700 active:bg-green-50"
             >
               {"\u{2753}"} Show Guide
             </button>
