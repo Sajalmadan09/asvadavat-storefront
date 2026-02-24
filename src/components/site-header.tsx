@@ -82,16 +82,7 @@ export function SiteHeader() {
       </nav>
 
       {/* Mobile sticky bar — compact bar with key actions that sticks on scroll */}
-      <div className="sticky top-0 z-40 flex items-center justify-between border-b border-olive-200/80 bg-white px-4 py-2 shadow-sm md:hidden">
-        <Link href="/" className="relative block h-8 w-28 shrink-0">
-          <Image
-            src="/asvadavat-logo-header.png"
-            alt="Asvadavat"
-            fill
-            className="object-contain object-left"
-            sizes="112px"
-          />
-        </Link>
+      <div className="sticky top-0 z-40 flex items-center justify-between border-b border-olive-200/80 bg-white px-3 py-2 shadow-sm md:hidden">
         <div className="flex items-center gap-1">
           <Link
             href="/products"
@@ -102,8 +93,19 @@ export function SiteHeader() {
             </svg>
             Buy
           </Link>
+        </div>
+        <Link href="/" className="relative block h-10 w-36 shrink-0">
+          <Image
+            src="/asvadavat-logo-header.png"
+            alt="Asvadavat"
+            fill
+            className="object-contain"
+            sizes="144px"
+          />
+        </Link>
+        <div className="flex items-center gap-1">
           <Link href="/enquiry" className="relative rounded-lg p-1.5 text-green-900 active:bg-green-100">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="h-4.5 w-4.5">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="h-5 w-5">
               <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
             </svg>
             {count > 0 && (
