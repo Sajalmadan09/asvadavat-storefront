@@ -20,7 +20,7 @@ export function SiteHeader() {
   return (
     <>
       {/* Logo banner — scrolls away naturally with the page */}
-      <div className="relative w-full overflow-hidden border-b border-olive-200/80 bg-white">
+      <div className="relative hidden w-full overflow-hidden border-b border-olive-200/80 bg-white md:block">
         <div className="pointer-events-none absolute inset-y-0 left-0 hidden w-[35%] md:block" aria-hidden>
           <Image src="/header-spice-left.png" alt="" fill className="object-cover object-right" sizes="35vw" />
           <div className="absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white to-transparent" />
