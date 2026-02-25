@@ -24,93 +24,52 @@ export default function Home() {
 
   return (
     <main>
-      {/* ───── Hero ───── */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-green-800 via-green-900 to-emerald-900 px-4 pb-20 pt-14 text-green-50 md:pb-28 md:pt-24">
-        <div className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-emerald-500/20 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-20 -left-20 h-72 w-72 rounded-full bg-green-400/10 blur-3xl" />
-        <div className="relative mx-auto max-w-6xl">
-          <span className="inline-block rounded-full border border-green-400/30 bg-green-50/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-green-200 backdrop-blur">
-            Premium Quality
-          </span>
-          <h1 className="mt-4 text-4xl font-extrabold leading-[1.1] md:text-6xl">
-            Tea &amp; Spices
-            <br />
-            <span className="bg-gradient-to-r from-green-200 to-emerald-300 bg-clip-text text-transparent">
-              Straight From the Source
-            </span>
-          </h1>
-          <p className="mt-5 max-w-xl text-base leading-relaxed text-green-100/80 md:text-lg">
-            Discover our curated range of teas and spices. Pick your pack sizes, build an enquiry
-            basket, and reach us on WhatsApp in seconds.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link
-              href="/products"
-              className="rounded-full bg-white px-6 py-3 text-sm font-bold text-green-900 shadow-xl transition-transform active:scale-95 md:hover:scale-105"
-            >
-              Browse Products
-            </Link>
-            <Link
-              href="/enquiry"
-              className="rounded-full border-2 border-green-300/30 px-6 py-3 text-sm font-semibold text-green-50 backdrop-blur transition-colors hover:bg-white/10"
-            >
-              Open Enquiry
-            </Link>
-          </div>
-
-          <a href="#categories" className="mt-12 flex justify-center md:mt-16" aria-label="Scroll down">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-6 w-6 animate-bounce text-green-300/60 transition-colors hover:text-green-100">
-              <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-            </svg>
-          </a>
-        </div>
-      </section>
-
       <div className="mx-auto w-full max-w-6xl px-4">
         {/* ───── Category Quick Links ───── */}
-        <section id="categories" className="-mt-10 scroll-mt-20 grid grid-cols-2 gap-3 md:gap-5">
+        <section id="categories" className="mt-8 scroll-mt-20 grid grid-cols-2 gap-3 md:mt-10 md:gap-5">
           <Link
             href="/products?category=tea"
-            className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 p-5 text-white shadow-lg transition-transform active:scale-[0.97] md:p-8 md:hover:scale-[1.02]"
+            className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#9bd8b9] to-[#7ec8a3] p-5 text-[#1d3a2c] shadow-lg transition-transform active:scale-[0.97] md:p-8 md:hover:scale-[1.02]"
           >
             <span className="absolute right-2 top-2 text-4xl opacity-20 md:text-6xl">{"\u{1F375}"}</span>
             <h3 className="text-lg font-extrabold md:text-2xl">Tea</h3>
-            <p className="mt-0.5 text-xs text-emerald-100 md:text-sm">CTC, Orthodox &amp; Green</p>
-            <span className="mt-2 inline-block text-xs font-bold text-emerald-200 group-hover:underline md:text-sm">Explore &rarr;</span>
+            <p className="mt-0.5 text-xs text-[#2f6648] md:text-sm">CTC, Orthodox &amp; Green</p>
+            <span className="mt-2 inline-block text-xs font-bold text-[#24543b] group-hover:underline md:text-sm">Explore &rarr;</span>
           </Link>
           <Link
             href="/products?category=spices"
-            className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-red-500 to-orange-600 p-5 text-white shadow-lg transition-transform active:scale-[0.97] md:p-8 md:hover:scale-[1.02]"
+            className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#ffd8b8] to-[#ffc79a] p-5 text-[#4d2a16] shadow-lg transition-transform active:scale-[0.97] md:p-8 md:hover:scale-[1.02]"
           >
             <span className="absolute right-2 top-2 text-4xl opacity-20 md:text-6xl">{"\u{1F336}\uFE0F"}</span>
             <h3 className="text-lg font-extrabold md:text-2xl">Spices</h3>
-            <p className="mt-0.5 text-xs text-orange-100 md:text-sm">Masalas, Powders &amp; Whole</p>
-            <span className="mt-2 inline-block text-xs font-bold text-orange-200 group-hover:underline md:text-sm">Explore &rarr;</span>
+            <p className="mt-0.5 text-xs text-[#8b4a27] md:text-sm">Masalas, Powders &amp; Whole</p>
+            <span className="mt-2 inline-block text-xs font-bold text-[#7a3f22] group-hover:underline md:text-sm">Explore &rarr;</span>
           </Link>
         </section>
 
-        {/* ───── Brand Story ───── */}
+        {/* ───── Brand Meaning ───── */}
         <section className="mt-16 md:mt-20">
           <div className="grid items-center gap-8 md:grid-cols-2">
             <div>
-              <span className="text-xs font-bold uppercase tracking-[0.2em] text-green-700">Our Story</span>
-              <h2 className="mt-2 text-2xl font-extrabold leading-snug text-green-950 md:text-3xl">
-                Rooted in Tradition,<br />
-                <span className="text-green-700">Crafted with Care</span>
+              <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#3f8c63]">Introducing Asvadavat</span>
+              <h2 className="mt-2 text-2xl font-extrabold leading-snug text-[#1d3a2c] md:text-3xl">
+                Spice and Tea company..
               </h2>
-              <p className="mt-4 text-sm leading-relaxed text-olive-700 md:text-base">
-                At ASVADAVAT, we believe every cup of tea and every pinch of spice should carry the
-                authentic flavors of India. We source directly from trusted farms and estates,
-                ensuring freshness, purity, and unmatched quality in every pack.
+              <p className="mt-3 text-base font-semibold leading-relaxed text-[#37684b] md:text-lg">
+                The perfect name of purity and taste!
               </p>
-              <p className="mt-3 text-sm leading-relaxed text-olive-600 md:text-base">
-                From the robust CTC blends of Assam to the aromatic whole spices of Kerala, our
-                catalog is a celebration of India&apos;s rich culinary heritage &mdash; available at
-                transparent, pack-size pricing.
+              <h3 className="mt-5 text-xl font-extrabold text-[#1d3a2c] md:text-2xl">What Does Asvadavat Mean?</h3>
+              <p className="mt-3 text-sm leading-relaxed text-olive-700 md:text-base">
+                Asvadavat (आस्वादवत्):(ā-svāda-vat) derived from Sanskrit word ā-svāda meaning having
+                a good taste, is what the name suggests.
+              </p>
+              <p className="mt-3 text-sm leading-relaxed text-olive-700 md:text-base">
+                Asvadavat (आस्वादवत्):(ā-svāda-vat) derived from Sanskrit word ā-svāda meaning having
+                a good taste, is what the name suggests.
               </p>
               <Link
                 href="/products"
-                className="mt-6 inline-block rounded-full bg-green-900 px-6 py-2.5 text-sm font-bold text-green-50 shadow transition-transform active:scale-95 md:hover:scale-105"
+                className="mt-6 inline-block rounded-full bg-gradient-to-r from-[#5aa982] to-[#3f8c63] px-6 py-2.5 text-sm font-bold text-white shadow transition-transform active:scale-95 md:hover:scale-105"
               >
                 Explore Our Range
               </Link>
@@ -136,8 +95,8 @@ export default function Home() {
         </section>
 
         {/* ───── Stats Bar ───── */}
-        <section className="mt-16 overflow-hidden rounded-2xl bg-gradient-to-r from-green-900 via-green-800 to-emerald-900 shadow-xl">
-          <div className="grid grid-cols-2 divide-green-700/40 md:grid-cols-4 md:divide-x">
+        <section className="mt-16 overflow-hidden rounded-2xl bg-gradient-to-r from-[#e8f8ee] via-[#dcf4e6] to-[#d1efdd] shadow-lg">
+          <div className="grid grid-cols-2 divide-[#c5e5d2] md:grid-cols-4 md:divide-x">
             {[
               { value: `${products.length}`, label: "Products", icon: "\u{1F4E6}" },
               { value: "2", label: "Categories", icon: "\u{1F3F7}\uFE0F" },
@@ -146,8 +105,8 @@ export default function Home() {
             ].map((stat) => (
               <div key={stat.label} className="flex flex-col items-center px-4 py-6 text-center md:py-8">
                 <span className="text-2xl">{stat.icon}</span>
-                <span className="mt-2 text-2xl font-extrabold text-white md:text-3xl">{stat.value}</span>
-                <span className="mt-0.5 text-xs font-medium text-green-300 md:text-sm">{stat.label}</span>
+                <span className="mt-2 text-2xl font-extrabold text-[#1d3a2c] md:text-3xl">{stat.value}</span>
+                <span className="mt-0.5 text-xs font-medium text-[#3f8c63] md:text-sm">{stat.label}</span>
               </div>
             ))}
           </div>
@@ -228,21 +187,21 @@ export default function Home() {
       </div>
 
       {/* ───── WhatsApp CTA Banner ───── */}
-      <section className="mt-16 bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 px-4 py-10 text-white md:py-14">
+      <section className="mt-16 bg-gradient-to-r from-[#d8f3e4] via-[#c9ecd9] to-[#bce4cd] px-4 py-10 text-[#1d3a2c] md:py-14">
         <div className="mx-auto flex max-w-4xl flex-col items-center gap-5 text-center md:flex-row md:text-left">
-          <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-white/20 backdrop-blur md:h-20 md:w-20">
+          <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-white/70 backdrop-blur md:h-20 md:w-20">
             <svg viewBox="0 0 24 24" fill="currentColor" className="h-9 w-9 md:h-11 md:w-11">
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
             </svg>
           </div>
           <div className="flex-1">
             <h2 className="text-xl font-extrabold md:text-2xl">Have Questions? We&apos;re on WhatsApp!</h2>
-            <p className="mt-1 text-sm text-green-100 md:text-base">Need help choosing products or want a custom bulk quote? Message us directly and we&apos;ll respond right away.</p>
+            <p className="mt-1 text-sm text-[#37684b] md:text-base">Need help choosing products or want a custom bulk quote? Message us directly and we&apos;ll respond right away.</p>
           </div>
           {WHATSAPP_NUMBER ? (
-            <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi! I'd like to know more about your tea and spice products.")}`} target="_blank" rel="noreferrer" className="shrink-0 rounded-full bg-white px-8 py-3.5 text-sm font-bold text-green-700 shadow-xl transition-transform active:scale-95 md:hover:scale-105">Chat on WhatsApp</a>
+            <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi! I'd like to know more about your tea and spice products.")}`} target="_blank" rel="noreferrer" className="shrink-0 rounded-full bg-[#3f8c63] px-8 py-3.5 text-sm font-bold text-white shadow-lg transition-transform active:scale-95 md:hover:scale-105">Chat on WhatsApp</a>
           ) : (
-            <Link href="/enquiry" className="shrink-0 rounded-full bg-white px-8 py-3.5 text-sm font-bold text-green-700 shadow-xl transition-transform active:scale-95 md:hover:scale-105">Send an Enquiry</Link>
+            <Link href="/enquiry" className="shrink-0 rounded-full bg-[#3f8c63] px-8 py-3.5 text-sm font-bold text-white shadow-lg transition-transform active:scale-95 md:hover:scale-105">Send an Enquiry</Link>
           )}
         </div>
       </section>

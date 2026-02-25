@@ -33,14 +33,14 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
         {toasts.map((toast) => (
           <div
             key={toast.id}
-            className="pointer-events-auto animate-slide-up flex w-full max-w-sm items-center gap-3 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-600 px-4 py-3 text-white shadow-2xl"
+            className="pointer-events-auto animate-slide-up flex w-full max-w-sm items-center gap-3 rounded-2xl bg-gradient-to-r from-[#5aa982] to-[#3f8c63] px-4 py-3 text-white shadow-2xl"
           >
             <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/20 text-lg">
               &#10003;
             </span>
             <div className="min-w-0 flex-1 text-sm">
               <p className="truncate font-bold">{toast.productName}</p>
-              <p className="text-emerald-100">Added to enquiry basket</p>
+              <p className="text-[#dff3e8]">Added to enquiry basket</p>
             </div>
             <Link
               href="/enquiry"

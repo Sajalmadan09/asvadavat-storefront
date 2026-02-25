@@ -29,8 +29,8 @@ export function ProductPriceSelector({ product }: { product: Product }) {
   }
 
   return (
-    <div className="rounded-2xl border border-olive-200 bg-white p-5 shadow-sm">
-      <h3 className="text-lg font-bold text-green-950">Select Pack Size</h3>
+    <div className="rounded-2xl border border-[#cde6d7] bg-white p-5 shadow-sm">
+      <h3 className="text-lg font-bold text-[#1d3a2c]">Select Pack Size</h3>
       <div className="mt-4 flex flex-wrap gap-2">
         {product.prices.map((price) => (
           <button
@@ -39,8 +39,8 @@ export function ProductPriceSelector({ product }: { product: Product }) {
             onClick={() => setSelectedPackSize(price.packSize)}
             className={`rounded-full border-2 px-4 py-2 text-sm font-semibold transition-all ${
               selectedPackSize === price.packSize
-                ? "border-green-700 bg-green-700 text-white shadow"
-                : "border-olive-200 text-green-800 hover:border-green-400"
+                ? "border-[#4f9d73] bg-[#4f9d73] text-white shadow"
+                : "border-[#cde6d7] text-[#37684b] hover:border-[#7cb894]"
             }`}
           >
             {price.packSize}
@@ -48,9 +48,9 @@ export function ProductPriceSelector({ product }: { product: Product }) {
         ))}
       </div>
 
-      <div className="mt-5 rounded-xl bg-gradient-to-r from-green-50 to-emerald-50 p-4">
-        <p className="text-xs font-medium uppercase tracking-wider text-green-700">Net Price</p>
-        <p className="mt-0.5 text-3xl font-extrabold text-green-950">Rs.&nbsp;{selectedPrice.netPriceInr}</p>
+      <div className="mt-5 rounded-xl bg-gradient-to-r from-[#f2fbf4] to-[#e6f6ec] p-4">
+        <p className="text-xs font-medium uppercase tracking-wider text-[#3f8c63]">Net Price</p>
+        <p className="mt-0.5 text-3xl font-extrabold text-[#1d3a2c]">Rs.&nbsp;{selectedPrice.netPriceInr}</p>
       </div>
 
       <button
@@ -59,8 +59,8 @@ export function ProductPriceSelector({ product }: { product: Product }) {
         onClick={handleAdd}
         className={`mt-4 w-full rounded-xl py-3.5 text-sm font-bold shadow-lg transition-all active:scale-[0.98] ${
           justAdded
-            ? "bg-emerald-600 text-white"
-            : "bg-gradient-to-r from-green-700 to-green-900 text-green-50 hover:shadow-xl"
+            ? "bg-[#5aa982] text-white"
+            : "bg-gradient-to-r from-[#5aa982] to-[#3f8c63] text-white hover:shadow-xl"
         }`}
       >
         {justAdded ? "\u2713 Added to Enquiry!" : "Add to Enquiry"}

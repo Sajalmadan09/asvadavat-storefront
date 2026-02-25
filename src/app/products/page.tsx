@@ -42,7 +42,7 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
     <main className="mx-auto w-full max-w-6xl px-4 py-6 md:py-8">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-extrabold text-green-950 md:text-3xl">Product Catalog</h1>
+          <h1 className="text-2xl font-extrabold text-[#1d3a2c] md:text-3xl">Product Catalog</h1>
           <p className="mt-1 text-sm text-olive-500">
             {products.length} product{products.length !== 1 && "s"} found
           </p>
@@ -55,9 +55,9 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
           const isActive = activeCategory === cat;
           const href = cat === "all" ? "/products" : `/products?category=${cat}`;
           const colors = {
-            all: isActive ? "bg-green-800 text-white" : "bg-white text-green-800 border-olive-200",
-            tea: isActive ? "bg-emerald-600 text-white" : "bg-white text-emerald-700 border-emerald-200",
-            spices: isActive ? "bg-orange-600 text-white" : "bg-white text-orange-700 border-orange-200",
+            all: isActive ? "bg-[#4f9d73] text-white border-[#4f9d73]" : "bg-white text-[#37684b] border-[#cde6d7]",
+            tea: isActive ? "bg-[#5aa982] text-white border-[#5aa982]" : "bg-white text-[#3f8c63] border-[#cde6d7]",
+            spices: isActive ? "bg-[#e29a66] text-white border-[#e29a66]" : "bg-white text-[#9a5a32] border-[#f2d2ba]",
           };
           return (
             <Link key={cat} href={href} className={`shrink-0 rounded-full border px-4 py-2 text-sm font-bold transition-all active:scale-95 ${colors[cat]}`}>
@@ -68,26 +68,26 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
       </div>
 
       {/* Filters */}
-      <details className="mt-4 rounded-2xl border border-olive-200 bg-white shadow-sm">
-        <summary className="flex cursor-pointer items-center justify-between px-4 py-3 text-sm font-bold text-green-900">
+      <details className="mt-4 rounded-2xl border border-[#cde6d7] bg-[#fbfefc] shadow-sm">
+        <summary className="flex cursor-pointer items-center justify-between px-4 py-3 text-sm font-bold text-[#2b503a]">
           <span>{"\u{1F50D}"} Filters &amp; Search</span>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="h-4 w-4 transition-transform [[open]>&]:rotate-180">
             <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
           </svg>
         </summary>
-        <form className="grid gap-3 border-t border-olive-100 px-4 pb-4 pt-3 md:grid-cols-4">
-          <input type="text" name="search" defaultValue={search} placeholder="Search by name..." className="rounded-xl border border-olive-200 px-4 py-2.5 text-sm focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-200" />
-          <select name="category" defaultValue={category ?? ""} className="rounded-xl border border-olive-200 px-4 py-2.5 text-sm focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-200">
+        <form className="grid gap-3 border-t border-[#dff0e6] px-4 pb-4 pt-3 md:grid-cols-4">
+          <input type="text" name="search" defaultValue={search} placeholder="Search by name..." className="rounded-xl border border-[#cde6d7] bg-white px-4 py-2.5 text-sm focus:border-[#5aa982] focus:outline-none focus:ring-2 focus:ring-[#cde6d7]" />
+          <select name="category" defaultValue={category ?? ""} className="rounded-xl border border-[#cde6d7] bg-white px-4 py-2.5 text-sm focus:border-[#5aa982] focus:outline-none focus:ring-2 focus:ring-[#cde6d7]">
             <option value="">All categories</option>
             <option value="tea">{categoryLabels.tea}</option>
             <option value="spices">{categoryLabels.spices}</option>
           </select>
-          <select name="packSize" defaultValue={packSize ?? ""} className="rounded-xl border border-olive-200 px-4 py-2.5 text-sm focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-200">
+          <select name="packSize" defaultValue={packSize ?? ""} className="rounded-xl border border-[#cde6d7] bg-white px-4 py-2.5 text-sm focus:border-[#5aa982] focus:outline-none focus:ring-2 focus:ring-[#cde6d7]">
             <option value="">All pack sizes</option>
             {packSizes.map((size) => (<option key={size} value={size}>{size}</option>))}
           </select>
-          <input type="number" name="maxPrice" min={1} defaultValue={maxPriceText ?? ""} placeholder="Max price (INR)" className="rounded-xl border border-olive-200 px-4 py-2.5 text-sm focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-200" />
-          <button type="submit" className="rounded-xl bg-gradient-to-r from-green-700 to-green-900 px-4 py-2.5 text-sm font-bold text-green-50 shadow transition-transform active:scale-[0.98] md:col-span-4">
+          <input type="number" name="maxPrice" min={1} defaultValue={maxPriceText ?? ""} placeholder="Max price (INR)" className="rounded-xl border border-[#cde6d7] bg-white px-4 py-2.5 text-sm focus:border-[#5aa982] focus:outline-none focus:ring-2 focus:ring-[#cde6d7]" />
+          <button type="submit" className="rounded-xl bg-gradient-to-r from-[#5aa982] to-[#3f8c63] px-4 py-2.5 text-sm font-bold text-white shadow transition-transform active:scale-[0.98] md:col-span-4">
             Apply Filters
           </button>
         </form>
@@ -97,23 +97,23 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
       {products.length === 0 ? (
         <div className="mt-12 text-center">
           <p className="text-4xl">{"\u{1F50D}"}</p>
-          <p className="mt-3 text-lg font-bold text-green-900">No products found</p>
+          <p className="mt-3 text-lg font-bold text-[#2b503a]">No products found</p>
           <p className="text-sm text-olive-500">Try adjusting your filters or search term.</p>
-          <Link href="/products" className="mt-4 inline-block rounded-full bg-green-800 px-5 py-2 text-sm font-bold text-white">Clear Filters</Link>
+          <Link href="/products" className="mt-4 inline-block rounded-full bg-[#4f9d73] px-5 py-2 text-sm font-bold text-white">Clear Filters</Link>
         </div>
       ) : (
         <div className="mt-5 grid grid-cols-2 gap-4 lg:grid-cols-3 lg:gap-5">
           {products.map((product) => {
             const productImage = getProductImageBySlug(product.slug);
-            const catColor = product.category === "tea" ? "bg-emerald-100 text-emerald-700" : "bg-orange-100 text-orange-700";
+            const catColor = product.category === "tea" ? "bg-[#e4f6ec] text-[#3f8c63]" : "bg-[#fff0e3] text-[#9a5a32]";
             const minPrice = Math.min(...product.prices.map((p) => p.netPriceInr));
             return (
               <article
                 key={product.id}
-                className="group flex flex-col overflow-hidden rounded-2xl border border-olive-100 bg-white shadow-sm transition-all hover:shadow-xl hover:scale-[1.02]"
+                className="group flex flex-col overflow-hidden rounded-2xl border border-[#dff0e6] bg-white shadow-sm transition-all hover:shadow-lg hover:scale-[1.02]"
               >
                 <Link href={`/products/${product.slug}`} className="block">
-                  <div className="relative h-44 overflow-hidden bg-gradient-to-b from-olive-50 to-green-50 md:h-56">
+                  <div className="relative h-44 overflow-hidden bg-gradient-to-b from-[#f4fbf7] to-[#e9f7ef] md:h-56">
                     {productImage ? (
                       <Image src={productImage} alt={product.nameEn} fill className="object-cover transition-transform group-hover:scale-105" sizes="(max-width: 1024px) 50vw, 33vw" />
                     ) : (
@@ -126,14 +126,14 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
                     {categoryLabels[product.category]}
                   </span>
                   <Link href={`/products/${product.slug}`}>
-                    <h2 className="mt-1.5 line-clamp-2 text-base font-extrabold text-green-950 md:text-lg">{product.nameEn}</h2>
+                    <h2 className="mt-1.5 line-clamp-2 text-base font-extrabold text-[#1d3a2c] md:text-lg">{product.nameEn}</h2>
                   </Link>
                   {product.nameHi && <p className="text-xs text-olive-500">{product.nameHi}</p>}
                   <p className="mt-1.5 hidden text-xs leading-relaxed text-olive-600 md:line-clamp-2">{product.description}</p>
-                  <p className="mt-2 text-sm font-bold text-green-700">From Rs.&nbsp;{minPrice}</p>
+                  <p className="mt-2 text-sm font-bold text-[#3f8c63]">From Rs.&nbsp;{minPrice}</p>
                   <div className="mt-auto flex items-center gap-2 pt-3">
                     <AddToEnquiryButton productId={product.id} productSlug={product.slug} productName={product.nameEn} price={product.prices[0]} />
-                    <Link href={`/products/${product.slug}`} className="rounded-lg border border-olive-200 px-3 py-2 text-xs font-bold text-green-800 transition-colors hover:bg-green-50 active:bg-green-100 md:text-sm">
+                    <Link href={`/products/${product.slug}`} className="rounded-lg border border-[#cde6d7] px-3 py-2 text-xs font-bold text-[#37684b] transition-colors hover:bg-[#f0f8f3] active:bg-[#e4f2ea] md:text-sm">
                       Details
                     </Link>
                   </div>

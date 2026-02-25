@@ -61,7 +61,7 @@ export function ProductCarousel({
           className="w-full flex-shrink-0 snap-start"
           style={{ scrollSnapAlign: "start" }}
         >
-          <div className="relative h-64 bg-gradient-to-b from-olive-50 to-green-50 md:h-80">
+          <div className="relative h-64 bg-gradient-to-b from-[#f4fbf7] to-[#e9f7ef] md:h-80">
             {productImage ? (
               <Image
                 src={productImage}
@@ -84,26 +84,26 @@ export function ProductCarousel({
           className="w-full flex-shrink-0 snap-start"
           style={{ scrollSnapAlign: "start" }}
         >
-          <div className="flex h-64 flex-col items-center justify-center bg-gradient-to-b from-green-50 to-emerald-50 p-6 md:h-80">
+          <div className="flex h-64 flex-col items-center justify-center bg-gradient-to-b from-[#eff9f3] to-[#e2f4ea] p-6 md:h-80">
             <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white shadow-md">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="h-8 w-8 text-green-700">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="h-8 w-8 text-[#3f8c63]">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
               </svg>
             </div>
-            <h3 className="mt-4 text-lg font-extrabold text-green-950">FSSAI Certified</h3>
+            <h3 className="mt-4 text-lg font-extrabold text-[#1d3a2c]">FSSAI Certified</h3>
             <p className="mt-1 text-xs text-olive-500">{fssaiInfo.logoAlt}</p>
             <div className="mt-4 w-full max-w-xs space-y-2">
               <div className="flex items-center justify-between rounded-lg bg-white px-3 py-2 shadow-sm">
                 <span className="text-xs font-medium text-olive-500">License No.</span>
-                <span className="text-xs font-bold text-green-900">{fssaiInfo.licenseNo}</span>
+                <span className="text-xs font-bold text-[#2b503a]">{fssaiInfo.licenseNo}</span>
               </div>
               <div className="flex items-center justify-between rounded-lg bg-white px-3 py-2 shadow-sm">
                 <span className="text-xs font-medium text-olive-500">Marketer</span>
-                <span className="text-xs font-bold text-green-900">{fssaiInfo.marketerName}</span>
+                <span className="text-xs font-bold text-[#2b503a]">{fssaiInfo.marketerName}</span>
               </div>
               <div className="flex items-center justify-between rounded-lg bg-white px-3 py-2 shadow-sm">
                 <span className="text-xs font-medium text-olive-500">Address</span>
-                <span className="text-xs font-bold text-green-900">{fssaiInfo.marketerAddress}</span>
+                <span className="text-xs font-bold text-[#2b503a]">{fssaiInfo.marketerAddress}</span>
               </div>
             </div>
           </div>
@@ -115,19 +115,19 @@ export function ProductCarousel({
             className="w-full flex-shrink-0 snap-start"
             style={{ scrollSnapAlign: "start" }}
           >
-            <div className="flex h-64 flex-col items-center justify-center bg-gradient-to-b from-emerald-50 to-olive-50 p-6 md:h-80">
+            <div className="flex h-64 flex-col items-center justify-center bg-gradient-to-b from-[#e8f7ee] to-[#f2fbf4] p-6 md:h-80">
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white shadow-md">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="h-6 w-6 text-green-700">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="h-6 w-6 text-[#3f8c63]">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0ZM3.75 12h.007v.008H3.75V12Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm-.375 5.25h.007v.008H3.75v-.008Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
                 </svg>
               </div>
-              <h3 className="mt-3 text-lg font-extrabold text-green-950">Ingredients</h3>
+              <h3 className="mt-3 text-lg font-extrabold text-[#1d3a2c]">Ingredients</h3>
               <p className="mt-1 text-xs text-olive-500">What goes into this blend</p>
               <div className="mt-4 flex max-w-xs flex-wrap justify-center gap-1.5">
                 {ingredients.map((ing) => (
                   <span
                     key={ing}
-                    className="rounded-full border border-olive-200 bg-white px-3 py-1 text-xs font-medium text-green-800 shadow-sm"
+                    className="rounded-full border border-olive-200 bg-white px-3 py-1 text-xs font-medium text-[#37684b] shadow-sm"
                   >
                     {ing}
                   </span>
@@ -147,7 +147,7 @@ export function ProductCarousel({
             onClick={() => goToSlide(i)}
             aria-label={`Go to slide ${i + 1}`}
             className={`h-2 rounded-full transition-all duration-300 ${
-              i === activeSlide ? "w-6 bg-green-600" : "w-2 bg-olive-300"
+              i === activeSlide ? "w-6 bg-[#4f9d73]" : "w-2 bg-olive-300"
             }`}
           />
         ))}

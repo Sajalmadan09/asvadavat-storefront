@@ -41,8 +41,8 @@ export function AddToEnquiryButton({
       }}
       className={`rounded-lg px-4 py-2.5 text-sm font-bold shadow transition-all active:scale-95 ${
         added
-          ? "bg-emerald-600 text-white"
-          : "bg-gradient-to-r from-green-700 to-green-900 text-green-50 hover:shadow-md"
+          ? "bg-[#5aa982] text-white"
+          : "bg-gradient-to-r from-[#5aa982] to-[#3f8c63] text-white hover:shadow-md"
       }`}
     >
       {added ? "\u2713 Added" : `Add (${price.packSize})`}
