@@ -86,7 +86,7 @@ export function SiteHeader() {
 
       {/* ── Mobile: premium sticky navbar ── */}
       <div className="sticky top-0 z-40 border-b border-[#e8e0d0] bg-white shadow-sm md:hidden">
-        <div className="grid grid-cols-[1fr_auto_1fr] items-center px-3 py-3.5">
+        <div className="grid grid-cols-[auto_1fr_auto] items-center gap-2 px-3 py-3.5">
           {/* Left: Buy */}
           <Link
             href="/products"
@@ -101,14 +101,14 @@ export function SiteHeader() {
           </Link>
 
           {/* Center: Very large logo */}
-          <Link href="/" className="justify-self-center">
-            <div className="relative h-16 w-[19.5rem]">
+          <Link href="/" className="block w-full">
+            <div className="relative mx-auto h-16 w-full max-w-[14rem] overflow-visible">
               <Image
                 src="/asvadavat-logo-header.png"
                 alt="Asvadavat"
                 fill
-                className="object-contain"
-                sizes="312px"
+                className="object-contain scale-[1.35]"
+                sizes="224px"
                 priority
               />
             </div>
