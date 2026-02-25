@@ -86,11 +86,11 @@ export function SiteHeader() {
 
       {/* ── Mobile: premium sticky navbar ── */}
       <div className="sticky top-0 z-40 border-b border-[#e8e0d0] bg-white shadow-sm md:hidden">
-        <div className="relative flex items-center justify-between px-3 py-3.5">
+        <div className="relative flex items-center justify-between px-3 py-4.5">
           {/* Left: Buy */}
           <Link
             href="/products"
-            className="relative z-10 flex items-center gap-1 rounded-full bg-gradient-to-r from-[#2d6a4f] to-[#1b4332] px-3.5 py-2 text-xs font-bold text-white shadow active:scale-95"
+            className="relative z-10 flex items-center gap-1 rounded-full bg-gradient-to-r from-[#2d6a4f] to-[#1b4332] px-3.5 py-2.5 text-xs font-bold text-white shadow active:scale-95"
           >
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="h-3.5 w-3.5">
               <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
@@ -100,13 +100,13 @@ export function SiteHeader() {
 
           {/* Center: Very large logo */}
           <Link href="/" className="pointer-events-auto absolute left-1/2 top-1/2 z-0 -translate-x-1/2 -translate-y-1/2">
-            <div className="relative h-16 w-60">
+            <div className="relative h-20 w-72">
               <Image
                 src="/asvadavat-logo-header.png"
                 alt="Asvadavat"
                 fill
                 className="object-contain"
-                sizes="240px"
+                sizes="288px"
                 priority
               />
             </div>
@@ -114,7 +114,7 @@ export function SiteHeader() {
 
           {/* Right: Bag + Menu */}
           <div className="relative z-10 flex items-center gap-1">
-            <Link href="/enquiry" className="relative rounded-lg p-2 text-[#1a1a1a] active:bg-[#f0ebe3]">
+            <Link href="/enquiry" className="relative rounded-lg p-2.5 text-[#1a1a1a] active:bg-[#f0ebe3]">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="h-5 w-5">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
               </svg>
@@ -127,7 +127,7 @@ export function SiteHeader() {
             <button
               type="button"
               onClick={() => setMenuOpen(!menuOpen)}
-              className="rounded-lg p-2 text-[#1a1a1a] active:bg-[#f0ebe3]"
+            className="rounded-lg p-2.5 text-[#1a1a1a] active:bg-[#f0ebe3]"
               aria-label="Toggle menu"
             >
               {menuOpen ? (
@@ -146,7 +146,7 @@ export function SiteHeader() {
 
       {/* ── Mobile drawer ── */}
       {menuOpen && (
-        <div className="sticky top-[5.25rem] z-40 animate-slide-down border-b border-[#e8e0d0] bg-white px-4 pb-5 pt-2 shadow-md md:hidden">
+        <div className="sticky top-[6.5rem] z-40 animate-slide-down border-b border-[#e8e0d0] bg-white px-4 pb-5 pt-2 shadow-md md:hidden">
           <nav className="flex flex-col gap-1">
             <Link
               href="/products"
