@@ -206,56 +206,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ───── All Products Preview ───── */}
-      <div className="mx-auto w-full max-w-6xl px-4">
-        <section className="mt-16 pb-12">
-          <h2 className="text-center text-xl font-extrabold text-green-950 md:text-2xl">Our Complete Range</h2>
-          <p className="mt-1 text-center text-sm text-olive-500">{products.length} products across {Object.keys(categoryLabels).length} categories</p>
-          <div className="mt-8 grid gap-6 md:grid-cols-2">
-            <div className="rounded-2xl border border-emerald-200 bg-gradient-to-br from-emerald-50 to-teal-50 p-5 md:p-6">
-              <div className="flex items-center gap-2">
-                <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-emerald-200 text-lg">{"\u{1F375}"}</span>
-                <div>
-                  <h3 className="text-base font-extrabold text-emerald-900 md:text-lg">{categoryLabels.tea}</h3>
-                  <p className="text-xs text-emerald-600">{teaProducts.length} product{teaProducts.length !== 1 && "s"}</p>
-                </div>
-              </div>
-              <ul className="mt-4 space-y-1.5">
-                {teaProducts.map((p) => (
-                  <li key={p.id}>
-                    <Link href={`/products/${p.slug}`} className="flex items-center justify-between rounded-lg px-3 py-2 text-sm font-medium text-emerald-800 transition-colors hover:bg-emerald-100 active:bg-emerald-200">
-                      <span className="flex-1">{p.nameEn}</span>
-                      <span className="shrink-0 text-xs font-bold text-emerald-600">From Rs.&nbsp;{Math.min(...p.prices.map((pr) => pr.netPriceInr))}</span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="rounded-2xl border border-orange-200 bg-gradient-to-br from-orange-50 to-amber-50 p-5 md:p-6">
-              <div className="flex items-center gap-2">
-                <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-orange-200 text-lg">{"\u{1F336}\uFE0F"}</span>
-                <div>
-                  <h3 className="text-base font-extrabold text-orange-900 md:text-lg">{categoryLabels.spices}</h3>
-                  <p className="text-xs text-orange-600">{spiceProducts.length} product{spiceProducts.length !== 1 && "s"}</p>
-                </div>
-              </div>
-              <ul className="mt-4 space-y-1.5">
-                {spiceProducts.map((p) => (
-                  <li key={p.id}>
-                    <Link href={`/products/${p.slug}`} className="flex items-center justify-between rounded-lg px-3 py-2 text-sm font-medium text-orange-800 transition-colors hover:bg-orange-100 active:bg-orange-200">
-                      <span className="flex-1">{p.nameEn}</span>
-                      <span className="shrink-0 text-xs font-bold text-orange-600">From Rs.&nbsp;{Math.min(...p.prices.map((pr) => pr.netPriceInr))}</span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-          <div className="mt-8 text-center">
-            <Link href="/products" className="inline-block rounded-full bg-gradient-to-r from-green-700 to-green-900 px-8 py-3 text-sm font-bold text-green-50 shadow-lg transition-transform active:scale-95 md:hover:scale-105">Browse Full Catalog</Link>
-          </div>
-        </section>
-      </div>
     </main>
   );
 }
